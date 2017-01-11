@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/01-design/!svn/ver/551/code/cms/src/com/cuckoo/cms/teacher/dao
+END
+TeaGrantApplyDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/01-design/!svn/ver/488/code/cms/src/com/cuckoo/cms/teacher/dao/TeaGrantApplyDao.java
+END
+IOrderDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/01-design/!svn/ver/551/code/cms/src/com/cuckoo/cms/teacher/dao/IOrderDao.java
+END
+ITPracticeDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/01-design/!svn/ver/260/code/cms/src/com/cuckoo/cms/teacher/dao/ITPracticeDao.java
+END
+IOrderRecordManagerDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/01-design/!svn/ver/449/code/cms/src/com/cuckoo/cms/teacher/dao/IOrderRecordManagerDao.java
+END
+TeaLeaveDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/01-design/!svn/ver/538/code/cms/src/com/cuckoo/cms/teacher/dao/TeaLeaveDao.java
+END
+TeaStudentInfoDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/01-design/!svn/ver/599/code/cms/src/com/cuckoo/cms/teacher/dao/TeaStudentInfoDao.java
+END
+IGrantManagerDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/01-design/!svn/ver/108/code/cms/src/com/cuckoo/cms/teacher/dao/IGrantManagerDao.java
+END
+ITNoticeManagerDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/01-design/!svn/ver/142/code/cms/src/com/cuckoo/cms/teacher/dao/ITNoticeManagerDao.java
+END
+IOrderScheduleDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/01-design/!svn/ver/549/code/cms/src/com/cuckoo/cms/teacher/dao/IOrderScheduleDao.java
+END
+TeaGrantDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/01-design/!svn/ver/537/code/cms/src/com/cuckoo/cms/teacher/dao/TeaGrantDao.java
+END
+TeaJobDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/01-design/!svn/ver/599/code/cms/src/com/cuckoo/cms/teacher/dao/TeaJobDao.java
+END
+IMentalHealthDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/01-design/!svn/ver/599/code/cms/src/com/cuckoo/cms/teacher/dao/IMentalHealthDao.java
+END
+TeaStuScoreDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/01-design/!svn/ver/436/code/cms/src/com/cuckoo/cms/teacher/dao/TeaStuScoreDao.java
+END

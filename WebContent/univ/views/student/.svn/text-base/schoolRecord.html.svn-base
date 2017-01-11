@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学生信息管理系统</title>
+<!-- thirdparty css -->
+<link rel="stylesheet" href="../../thirdparty/bootstrap-3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/jsTree-3.3.3/dist/themes/default/style.min.css">
+<!-- personal css -->
+<link rel="stylesheet" href="../../css/index.css">
+<link rel="stylesheet" href="../../css/schoolRecord.css">
+<!-- thirdparty js -->
+<script src="../../thirdparty/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script src="../../thirdparty/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../../thirdparty/jsTree-3.3.3/dist/jstree.min.js"></script>
+<!-- personal js -->
+<script src="../../js/student/noticeMgr.js"></script>
+<script src="../../js/utils/tablesStyleUtils.js"></script>
+</head>
+<body>
+	<div class="container top">
+    <div class="top-box">
+        <div class="top-box-head">
+            <span>学习成绩</span>
+        </div>
+        <div class="top-box-body">
+            <ul class="top-ul">
+                <li>
+                    <div>
+                        <img src="../../images/xinxibiao.png" alt=""/>
+                        <span>成绩单</span>
+                    </div>
+                </li>
+                <li>
+                    <form action="">
+                        <input type="text" name="grade-search" placeholder="大一第一学期"/>
+                        <button class="btn search-button"></button>
+                    </form>
+                </li>
+                <li>
+                    <a href="#">
+                        <input type="button" class="btn btn-self1" value="成绩统计"/>
+                    </a>
+                </li>
+            </ul>
+            <ul class="title-ul">
+                <li>学期</li>
+                <li>姓名</li>
+                <li>班级</li>
+                <li>大学语文</li>
+                <li>高等数学</li>
+                <li>线性代数</li>
+                <li>马克思主义</li>
+                <li>大学语文</li>
+                <li>历史</li>
+                <li>C语言</li>
+                <li>多媒体</li>
+                <li>操作</li>
+            </ul>
+            <ul class="content-ul">
+                <li>大一第一学期</li>
+                <li>杨云</li>
+                <li>计算机1611</li>
+                <li>92</li>
+                <li>76</li>
+                <li>72</li>
+                <li>68</li>
+                <li>80</li>
+                <li>72</li>
+                <li>78</li>
+                <li>72</li>
+                <li>
+                    <a href="#">查看成绩详情</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

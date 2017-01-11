@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学生信息管理系统</title>
+<!-- thirdparty css -->
+<link rel="stylesheet" href="../../thirdparty/bootstrap-3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/jsTree-3.3.3/dist/themes/default/style.min.css">
+<!-- personal js -->
+<link rel="stylesheet" href="../../css/index.css">
+<link rel="stylesheet" href="../../css/common.css">
+<!-- thirdparty js -->
+<script src="../../thirdparty/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script src="../../thirdparty/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../../thirdparty/jsTree-3.3.3/dist/jstree.min.js"></script>
+<!-- personal js -->
+<script src="../../js/teacher/talkMg.js"></script>
+<script src="../../js/utils/tablesStyleUtils.js"></script>
+<script src="../../js/student/layer.js"></script>
+</head>
+<body>
+	<div class="container top">
+	    <div class="top-box">
+	        <div class="top-box-head">
+	            <span>约谈管理</span>
+	        </div>
+	        <div class="top-box-body">
+	        	<ul class="top-ul">
+                <li>
+                    <div>
+                        <img src="../../images/xinxibiao.png" alt=""/>
+                        <span>约谈管理表</span>
+                    </div>
+                </li>
+               	<li class="btn-li">
+                    <a data-toggle="modal" href="#myModal" class="btn btn-self1" data-target="#myModal">填写约谈记录</a>
+                </li>
+                </ul>
+	        	<table id='talkMgTable' class="display">
+	        		<thead>
+	        			<tr>
+	        				<th><input type="checkbox" name='detail' id="checkAll"/></th>
+	        				<th>序号</th>
+	        				<th>姓名</th>
+	        				<th>学号</th>
+	        				<th>专业</th>
+	        				<th>谈话时间</th>
+	        				<th>谈话背景</th>
+	        				<th>问题类型</th>
+	        				<th>约谈次数</th>
+	        				<th>约谈效果</th>
+	        				<th>操作</th>
+	        			</tr>
+	        		</thead>
+				</table>
+				<div class="btn btn-default botbtn delete">删除</div>
+	        </div>
+	    </div>
+    </div>
+    <form role="form" id="form">
+    <input type="hidden" name="practiceId">
+  	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	        <h4 class="modal-title" id="myModalLabel">约谈记录表</h4>
+	      </div>
+	      <div class="modal-body">
+	       	<div class="form-group">
+			  <label for="stuNum" class="col-sm-4 control-label">学号</label>
+			    <div class="col-sm-5">
+			      <input type="text" class="form-control" id="stuNum" name="stuNum" required="required">
+			    </div>
+			</div>
+			<div class="form-group">
+			  <label for="talkBackground" class="col-sm-4 control-label">谈话背景</label>
+			    <div class="col-sm-5">
+			      <input type="text" class="form-control" id="talkBackground" name="talkBackground" required="required">
+			    </div>
+			</div>
+			<div class="form-group">
+			  <label for="prombleType" class="col-sm-4 control-label">问题类型</label>
+			    <div class="col-sm-5">
+			      <input type="text" class="form-control" id="prombleType" name="prombleType" required="required">
+			    </div>
+			</div>
+			<div class="form-group">
+			  <label for="talkCount" class="col-sm-4 control-label">约谈次数</label>
+			    <div class="col-sm-5">
+			      <input type="text" class="form-control" id="talkCount" name="talkCount" required="required">
+			    </div>
+			</div>
+			<div class="form-group">
+			  <label for="talkEffect" class="col-sm-4 control-label">约谈效果</label>
+			    <div class="col-sm-5">
+			      <input type="text" class="form-control" id="talkEffect" name="talkEffect" required="required">
+			    </div>
+			</div>
+	      </div>
+	      <div class="modal-footer">
+	      	<div class="form-group">
+                <button type="button" name="submit" class="btn btn-default button-submit">提交</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+	        
+	      </div>
+	    </div>
+	  </div>
+	</div> 
+	</form>
+</body>
+</html>

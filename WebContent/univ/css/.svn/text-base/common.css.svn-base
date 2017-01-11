@@ -1,0 +1,78 @@
+@CHARSET "UTF-8";
+.top{
+    height: 92.59%;
+    width: 100%;
+    padding: 1.5625% 1.5625%;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+.top-box{
+    width: 100%;
+    height: 100%;
+    padding: 1.5625%;
+    background-color: #ffffff;
+}
+.top-box-head{
+    height: 7.96%;
+    width: 100%;
+    border-bottom: 1px solid #dddddd;
+}
+.top-box-head span{
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 2px;
+    margin-bottom: 1.76%;
+    padding-left: 8px;
+    border-left: 4px solid #69baae;
+}
+.top-box-body{
+    width: 100%;
+    padding-top: 1.5625%;
+}
+.top-ul{
+    background-color: #69baae;
+    float: left;
+    width: 100%;
+    height: 50px;
+    padding: 6px 20px;
+}
+.top-ul li{
+    float: left;
+    color: #ffffff;
+}
+.top-ul li.btn-li{
+    float: right;
+}
+.top-ul li img{
+    margin-bottom: 3px;
+}
+.top-ul li span{
+    font-size: 15px;
+    display: inline-block;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.btn-self1{
+    font-size: 14px;
+    height: 38px;
+    width: 100px;
+    padding: 0;
+    color: #ababab;
+    background-color: #ffffff;
+    margin-left: 10px;
+    line-height:38px;
+}
+.form-group{
+	height:60px;
+	margin-bottom:0;
+}
+.form-group>label{
+	font-size:12px;
+	line-height:38px;
+}
+.btn-default{
+	color:#69baae;
+}
+td,th{
+	text-align:center;
+}

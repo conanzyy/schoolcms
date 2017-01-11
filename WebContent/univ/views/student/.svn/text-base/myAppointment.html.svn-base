@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学生信息管理系统</title>
+<!-- thirdparty css -->
+<link rel="stylesheet" href="../../thirdparty/bootstrap-3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/dataTables.bootstrap.min.css">
+<!-- personal css -->
+<link rel="stylesheet" href="../../css/index.css">
+<!-- thirdparty js -->
+<script src="../../thirdparty/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script src="../../thirdparty/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<!-- personal js -->
+<script src="../../js/student/myAppointment.js"></script>
+<script src="../../js/utils/tablesStyleUtils.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+	<div class="row-fluid col-md-12 tableTop">
+		<p>我的预约</p>
+		<hr>
+		<div class="tableHead">
+			<img alt="" src="../../images/xinxibiao.png">
+			<p>咨询列表</p>
+		</div>
+		<table id="myAppointTable" class="display">
+	    	<thead>
+           		<tr>
+           			<th><input type="checkbox" name="Items"></th>
+           			<th>Id</th>
+					<th>序号</th>
+	                <th>咨询类型</th>
+	                <th>咨询师</th>
+	                <th>照片</th>
+	                <th>工号</th>
+	                <th>预约时间</th>
+	                <th>提交时间</th>
+	                <th>状态</th>
+	                <th>操作</th>
+           		</tr>
+           	</thead>
+           	<tbody>
+           		<tr>
+           		 	<th></th>
+           		 	<th></th>
+           		  	<th>Id</th>
+					<td>心理健康</td>
+					<td>张三</td>
+					<td>aa</td>
+					<td>123456</td>
+					<td>2014-05-03</td>
+					<td>2014-05-03</td>
+					<td>预约成功</td>
+					<td></td>
+           		</tr>
+           	</tbody>
+		</table>
+	</div>
+</div>
+</body>
+</html>

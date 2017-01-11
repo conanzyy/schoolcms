@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cuckoo.cms.common.user.dao.IUserDao">
+<resultMap id="userResultMap" type="com.cuckoo.cms.common.user.pojo.User" >
+    <id column="userId" property="userId" jdbcType="VARCHAR" />
+    <result column="userName" property="userName" jdbcType="VARCHAR" />
+     <result column="isSys" property="isSys" jdbcType="VARCHAR" />
+      <result column="status" property="status" jdbcType="VARCHAR" />
+       <result column="isChangePwd" property="isChangePwd" jdbcType="VARCHAR" />
+<result column="tenantId" property="tenantId" jdbcType="VARCHAR" />
+
+  </resultMap>
+<select id="login"  parameterType="com.cuckoo.cms.common.user.pojo.req.UserReq"  resultMap="userResultMap"> 
+ <![CDATA[
+  SELECT  userId,userName,isSys,status,isChangePwd,tenantId FROM t_user where userName=#{userName} and passWord=#{passWord} 
+  and status='0'
+    ]]>
+  </select>
+
+
+<resultMap id="resourceResultMap" type="com.cuckoo.cms.common.user.pojo.Authority" >
+    <id column="authId" property="authId" jdbcType="VARCHAR" />
+    <result column="authName" property="authName" jdbcType="VARCHAR" />
+     <result column="parentId" property="parentId" jdbcType="VARCHAR" />
+      <result column="path" property="path" jdbcType="VARCHAR" />
+       <result column="authValue" property="authValue" jdbcType="VARCHAR" />
+          <result column="tenantId" property="tenantId" jdbcType="VARCHAR" />
+  </resultMap>
+<select id="getAllResource"  parameterType="com.cuckoo.cms.common.user.pojo.User"  resultMap="resourceResultMap">
+ <![CDATA[
+ select authId,authName,parentId,path,authValue,tenantId from t_authorities where tenantId=#{tenantId}
+ ]]>
+</select>
+
+
+<resultMap id="roleResultMap" type="com.cuckoo.cms.common.user.pojo.Role" >
+    <id column="roleId" property="roleId" jdbcType="VARCHAR" />
+    <result column="roleName" property="roleName" jdbcType="VARCHAR" />
+     <result column="status" property="status" jdbcType="VARCHAR" />
+      <result column="createTime" property="createTime" jdbcType="VARCHAR" />
+       <result column="createBy" property="createBy" jdbcType="VARCHAR" />
+       <result column="tenantId" property="tenantId" jdbcType="VARCHAR" />
+  </resultMap>
+<select id="getRoles" parameterType="com.cuckoo.cms.common.user.pojo.User"  resultMap="roleResultMap">
+<![CDATA[
+select tr.roleId,tr.roleName,tr.status,tr.createTime,tr.createBy,tr.tenantId from t_roles  tr
+
+left join t_user_role  tur on tur.roleId=tr.roleId
+
+where tr.tenantId=#{tenantId} and tur.userId=#{userId} and tr.status='0'
+
+ ]]>
+</select>
+
+<select id="getResourceByRole" parameterType="com.cuckoo.cms.common.user.pojo.Role"  resultMap="resourceResultMap">
+<![CDATA[
+select ta.authId,ta.authName,ta.parentId,ta.path,ta.authValue,ta.tenantId from t_authorities ta
+
+left join t_role_auth tra on ta.authId=tra.authId
+
+left join t_roles tr on tr.roleId =tra.roleId
+
+where ta.tenantId=#{tenantId} and tra.roleId=#{roleId} and tr.status='0' order by ta.authId 
+
+ ]]>
+</select>
+
+
+<update id="editUser" parameterType="com.cuckoo.cms.common.user.pojo.req.UserAddReq">
+<![CDATA[
+update t_user set passWord=#{newPassWord} ,isChangePwd=0 where userId=#{userId} and tenantId=#{tenantId} and status ='0'
+
+ ]]>
+</update>
+
+
+</mapper> 

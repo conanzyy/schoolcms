@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cuckoo.cms.teacher.dao.ITNoticeManagerDao">
+	<resultMap id="noticeResultMap" type="com.cuckoo.cms.teacher.pojo.TNotice">
+		<id column="noticeId" property="noticeId" jdbcType="VARCHAR" />
+		<result column="title" property="title" jdbcType="VARCHAR" />
+		<result column="cotent" property="content" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="VARCHAR" />
+		<result column="createTime" property="createTime" jdbcType="VARCHAR" />
+		<result column="createBy" property="createBy" jdbcType="VARCHAR" />
+		<result column="tenantId" property="tenantId" jdbcType="VARCHAR" />
+	</resultMap>
+	<select id="getTNoticeList" parameterType="string" resultMap="noticeResultMap">
+<![CDATA[
+select tn.noticeId,tn.title,tn.status,tn.createTime,tn.content,tu.userName as createBy from t_notices tn
+ left join t_user tu on tu.userId =tn.createBy
+ where tn.tenantId=#{tenantId} and tn.status='0' and tu.status='0'
+order by tn.createTime DESC
+ ]]>
+	</select>
+	
+	
+<select id="getTNoticeInfo" resultMap="noticeResultMap">
+	 <![CDATA[
+	select tn.noticeId,tn.title,tn.content,tn.status,tn.createTime,tu.userName as createBy from t_notices tn  
+	left join t_user tu on tu.userId =tn.createBy
+	where tn.tenantId=#{tenantId} and tn.noticeId=#{noticeId} and tn.status='0' and tu.status='0'
+	 ]]>
+	</select>	
+	
+  	<insert id="createTNotice" parameterType="com.cuckoo.cms.teacher.pojo.TNotice" useGeneratedKeys="true" keyProperty="noticeId" >
+<![CDATA[
+insert into t_notices(title,content,createBy,tenantId) values(#{title},#{content},#{createBy},#{tenantId}) 
+ ]]>
+	</insert>
+</mapper> 

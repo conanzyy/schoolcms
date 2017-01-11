@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学生信息管理系统</title>
+<!-- thirdparty css -->
+<link rel="stylesheet" href="../../thirdparty/bootstrap-3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/jsTree-3.3.3/dist/themes/default/style.min.css">
+<!-- personal js -->
+<link rel="stylesheet" href="../../css/index.css">
+<link rel="stylesheet" href="../../css/common.css">
+<!-- thirdparty js -->
+<script src="../../thirdparty/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script src="../../thirdparty/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../../thirdparty/jsTree-3.3.3/dist/jstree.min.js"></script>
+<!-- personal js -->
+<script src="../../js/student/bootstrapValidator.min.js"></script>
+<script src="../../js/teacher/mentalhealth.js"></script>
+<script src="../../js/utils/tablesStyleUtils.js"></script>
+<script src="../../js/student/layer.js"></script>
+</head>
+<body>
+	<div class="container top">
+	    <div class="top-box">
+	        <div class="top-box-head">
+	            <span>心理健康信息</span>
+	        </div>
+	        <div class="top-box-body">
+	        	<ul class="top-ul">
+                <li>
+                    <div>
+                        <img src="../../images/xinxibiao.png" alt=""/>
+                        <span>健康信息表</span>
+                    </div>
+                </li	>
+					<li style="float: right;"><a class="btn btn-self1" href='#fileModel'
+						data-toggle='modal' data-target='#fileModel'>批量导入</a> <a
+						class="btn btn-self1 export" href="/cms/exportMentalHealthAll" target="_blank">批量导出</a></li>
+				</ul>
+	        	<table id='studentList' class="display">
+	        		<thead>
+	        			<tr>
+	        				<th><input type="checkbox" name='detail' id="checkAll"/></th>
+	        				<th style="width:8%;">序号</th>
+	        				<th style="width:7%;">姓名</th>
+	        				<th style="width:7%;">学号</th>
+	        				<th style="width:7%;">专业</th>
+	        				<th style="width:7%;">班级</th>
+	        				<th>心理普查结果</th>
+	        				<th>排查时间</th>
+	        				<th>排查方式</th>
+	        				<th>信息记录</th>
+	        				<th>采取措施</th>
+	        				<th>操作</th>
+	        			</tr>
+	        		</thead>
+				</table>
+				<div class="btn btn-default botbtn delete">删除</div>
+	        </div>
+	    </div>
+    </div>
+    <div class="modal fade" id="fileModel" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel" aria-hidden="true">
+			<input type="hidden">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+						</button>
+						<h4 class="modal-title">excel导入</h4>
+					</div>
+					<div class="modal-body">
+						<input type="file" id="file"/>
+					</div>
+					<div class="modal-footer">
+					<a class="btn btn-default btn-pass import"
+							href="/cms/importMentalHealthTamplate" target="_blank">下载导入模板</a>
+						<button type="button" class="btn btn-default btn-pass import"
+							data-dismiss="modal">导入</button>
+						<button type="button" class="btn btn-default btn-nopass"
+							data-dismiss="modal">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+</html>

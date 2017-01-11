@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学生信息管理系统</title>
+<!-- thirdparty css -->
+<link rel="stylesheet" href="../../thirdparty/bootstrap-3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/jsTree-3.3.3/dist/themes/default/style.min.css">
+<!-- personal css -->
+<link rel="stylesheet" href="../../css/index.css">
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../css/table.css">
+<!-- thirdparty js -->
+<script src="../../thirdparty/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script src="../../thirdparty/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../../thirdparty/jsTree-3.3.3/dist/jstree.min.js"></script>
+<!-- personal js -->
+<script src="../../js/teacher/talkDetail.js"></script>
+</head>
+<body>
+	<div class="container top">
+    <div class="top-box">
+        <div class="top-box-head">
+            <span>约谈管理信息</span>
+            <div class="btn btn-default fr" onclick="window.history.back()">返回</div>
+        </div>
+        <div class="top-box-body">
+			<table>
+               	<thead>
+                    <tr>
+                        <th colspan="8">约谈管理信息详情</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="table-col1">
+                            <label for="stuName">姓名</label>
+                        </td>
+                        <td>
+                            <input type="text" id="stuName" name="stuName" readonly/>
+                        </td>
+                        <td>
+                            <label for="stuNum">学号</label>
+                        </td>
+                        <td>
+                            <input type="text" id="stuNum" name="stuNum" readonly/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="table-col1">
+                            <label for="talkTime">谈话时间</label>
+                        </td>
+                        <td>
+                            <input type="text" id="talkTime" name="talkTime" readonly/>
+                        </td>
+                        <td>
+                            <label for="talkBackground">谈话背景</label>
+                        </td>
+                        <td>
+                            <input type="text" id="talkBackground" name="talkBackground" readonly/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="prombleType">问题类型</label>
+                        </td>
+                        <td>
+                            <input type="text" id="prombleType" name="prombleType" readonly/>
+                        </td>
+                        <td>
+                            <label for="talkCount">约谈次数</label>
+                        </td>
+                        <td>
+                            <input type="text" id="talkCount" name="talkCount" readonly/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="talkEffect">约谈效果</label>
+                        </td>
+                        <td>
+                            <input type="text" id="talkEffect" name="talkEffect" readonly/>
+                        </td>
+					</tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

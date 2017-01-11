@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/01-design/!svn/ver/558/code/cms/src/com/cuckoo/cms/student/service
+END
+NoticeManagerService.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/01-design/!svn/ver/594/code/cms/src/com/cuckoo/cms/student/service/NoticeManagerService.java
+END
+LeaveManagerService.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/01-design/!svn/ver/287/code/cms/src/com/cuckoo/cms/student/service/LeaveManagerService.java
+END
+OrderCounselorService.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/01-design/!svn/ver/558/code/cms/src/com/cuckoo/cms/student/service/OrderCounselorService.java
+END
+PracticeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/01-design/!svn/ver/111/code/cms/src/com/cuckoo/cms/student/service/PracticeService.java
+END
+StudentManagerService.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/01-design/!svn/ver/163/code/cms/src/com/cuckoo/cms/student/service/StudentManagerService.java
+END
+MyOrderService.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/01-design/!svn/ver/558/code/cms/src/com/cuckoo/cms/student/service/MyOrderService.java
+END

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学生信息管理系统</title>
+<!-- thirdparty css -->
+<link rel="stylesheet" href="../../thirdparty/bootstrap-3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/jsTree-3.3.3/dist/themes/default/style.min.css">
+<!-- personal css -->
+<link rel="stylesheet" href="../../css/index.css">
+<link rel="stylesheet" href="../../css/leaveMg.css">
+<!-- thirdparty js -->
+<script src="../../thirdparty/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script src="../../thirdparty/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../../thirdparty/jsTree-3.3.3/dist/jstree.min.js"></script>
+<!-- personal js -->
+<script src="../../js/student/layer.js"></script>
+<script src="../../js/student/leaveMg.js"></script>
+<script src="../../js/utils/tablesStyleUtils.js"></script>
+</head>
+<body>
+<div class="container top">
+    <div class="top-box">
+        <div class="top-box-head">
+            <span>请假管理</span>
+        </div>
+        <div class="top-box-body">
+            <ul class="top-ul">
+                <li>
+                    <div>
+                        <img src="../../images/xinxibiao.png" alt=""/>
+                        <span>请假信息表</span>
+                    </div>
+                </li>
+                <li>
+                    <a data-toggle="modal" href="#classModal" class="btn btn-self1" data-target="#classModal" val="0">新增课假</a>
+                    <a data-toggle="modal" href="#classModal" class="btn btn-self1" data-target="#classModal" val="1">新增离校假</a>
+                </li>
+            </ul>
+            <table id="leaveMgTable" class="display">
+		    	<thead>
+            		<tr>
+            			<th style="width:5%;"><input type='checkbox' id="checkAll"></th>
+		                <th style="width:8%">序号</th>
+		                <th>姓名</th>
+		                <th>班级</th>
+		                <th style="width:10%;">申请日期</th>
+		                <th>请假形式</th>
+						<th>请假事由</th>
+		                <th>请假天数</th>
+		                <th>离校时间</th>
+		                <th>返校时间</th>
+		                <th>状态</th>
+		                <th style="width:20%;">操作</th>
+            		</tr>
+            	</thead>
+			</table>
+        </div>
+    </div>
+</div>
+<form role="form" id="form">
+	<input type="hidden" name="type">
+    <div class="modal fade" id="classModal" tabindex="-1" role="dialog" aria-labelledby="classModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">新增课假</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="cause" class="col-sm-4 control-label">请假事由</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" id="cause" name="cause" required="required">
+                </div>
+            </div>
+            <div class="form-group">
+              <label for="leaveDays" class="col-sm-4 control-label">请假天数</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" id="leaveDays" name="leaveDays" required="required">
+                </div>
+            </div>
+            <div class="form-group">
+              <label for="leaveTime" class="col-sm-4 control-label">离校时间</label>
+                <div class="col-sm-5">
+                  <input type="date" class="form-control" id="leaveTime" name="leaveTime" required="required">
+                </div>
+            </div>
+            <div class="form-group">
+              <label for="comeTime" class="col-sm-4 control-label">返校时间</label>
+                <div class="col-sm-5">
+                  <input type="date" class="form-control" id="comeTime" name="comeTime" required="required">
+                </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <div class="form-group">
+                <button type="submit" name="submit" class="btn btn-default button-submit">提交</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+</form>
+</body>
+</html>

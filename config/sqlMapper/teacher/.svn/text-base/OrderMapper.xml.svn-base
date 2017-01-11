@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cuckoo.cms.teacher.dao.IOrderDao">
+	<resultMap id="orderInfoResultMap" type="com.cuckoo.cms.teacher.pojo.OrderInfo">
+		<id column="orderId" property="orderId" jdbcType="VARCHAR" />
+		<result column="stuName" property="stuName" jdbcType="VARCHAR" />
+		<result column="consultingArea" property="consultingArea" jdbcType="VARCHAR" />
+		<result column="consultTime" property="consultTime" jdbcType="VARCHAR" />
+		<result column="description" property="description" jdbcType="VARCHAR" />
+		 <result column="solveProblem" property="solveProblem" jdbcType="VARCHAR" />
+		  <result column="processReport" property="processReport" jdbcType="VARCHAR" />
+		   <result column="advice" property="advice" jdbcType="VARCHAR" />
+		 <result column="isFinish" property="isFinish" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<select id="getOrderList" parameterType="com.cuckoo.cms.common.user.pojo.User" resultMap="orderInfoResultMap">
+
+select to.orderId,to.stuName,tc.consultingArea,to.consultTime,to.solveProblem,to.processReport,to.advice,to.isFinish from t_order to
+ left join t_student ts on ts.userId=tc.userId
+ left join t_order_schedule on tos tos.scheduleId=to.scheduleId
+ left join t_counselor tc tc.counselorId=tos.counselorId
+ where tc.tenantId=#{tenantId} and tc.status='0' and tos.status='0' and tc.status='0' and tc.userId=#{userId}
+	</select>
+ <insert id="createOrder" parameterType="com.cuckoo.cms.teacher.pojo.OrderInfo">
+ <![CDATA[
+ insert into t_order(userId,scheduleId) values(#{userId},#{scheduleId})
+  ]]>
+ </insert>
+ <update id="updateOrder" parameterType="com.cuckoo.cms.teacher.pojo.OrderInfo" >
+ 
+update t_order to set to.description=#{description},to.consultTime=#{consultTime},to.solveProblem=#{solveProblem},to.processReport=#{processReport},to.advice=#{advice} where to.orderId=#{orderId} and to.status='0'and to.userId in (select userId from t_user where tenantId =#{tenantId}) 
+ 
+ </update>
+ 
+ <update id="deleteOrder" >
+ 
+ update t_order to set tc.status='1' where to.status='0' and to.orderId=#{orderId} and to.userId in (select userId from t_user where tenantId =#{tenantId})
+ 
+ </update>
+ 
+ 
+ <update id="oneDoneOrder" >
+ updatet_order to set to.isFinish='1' where to.status='0' and to.isFinish='0' and to.userId in (select userId from t_user where tenantId =#{tenantId})
+ 
+ </update>
+</mapper> 

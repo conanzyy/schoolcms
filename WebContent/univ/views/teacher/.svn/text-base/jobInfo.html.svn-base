@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学生信息管理系统</title>
+<!-- thirdparty css -->
+<link rel="stylesheet"
+	href="../../thirdparty/bootstrap-3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="../../thirdparty/dataTables-1.10.12/css/jquery.dataTables.min.css">
+<link rel="stylesheet"
+	href="../../thirdparty/dataTables-1.10.12/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet"
+	href="../../thirdparty/jsTree-3.3.3/dist/themes/default/style.min.css">
+<!-- personal css -->
+<link rel="stylesheet" href="../../css/index.css">
+<link rel="stylesheet" href="../../css/practice.css">
+<!-- thirdparty js -->
+<script src="../../thirdparty/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+<script
+	src="../../thirdparty/dataTables-1.10.12/js/jquery.dataTables.min.js"></script>
+<script
+	src="../../thirdparty/dataTables-1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script src="../../thirdparty/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../../thirdparty/jsTree-3.3.3/dist/jstree.min.js"></script>
+<!-- personal js -->
+<script src="../../js/student/layer.js"></script>
+<script src="../../js/teacher/jobInfo.js"></script>
+<script src="../../js/utils/tablesStyleUtils.js"></script>
+</head>
+<body>
+	<div class="container top">
+		<div class="top-box">
+			<div class="top-box-head">
+				<span>就业信息管理</span>
+			</div>
+			<div class="top-box-body">
+				<ul class="top-ul">
+					<li>
+						<div>
+							<img src="../../images/xinxibiao.png" alt="" /> <span>就业信息表</span>
+						</div>
+					</li>
+					<li><a class="btn btn-self1" href='#fileModel'
+						data-toggle='modal' data-target='#fileModel'>批量导入</a> 
+						<a class="btn btn-self1 export" href="/cms/exportTeaJob" target="_blank">批量导出</a></li>
+				</ul>
+				<table id="jobInfoTable" class="display">
+					<thead>
+						<tr>
+							<th style="width: 5%;"><input type='checkbox' id="checkAll"></th>
+							<th style="width: 8%">序号</th>
+							<th>姓名</th>
+							<th>专业</th>
+							<th>班级</th>
+							<th>就业类别</th>
+							<th>工作（升学）单位名称</th>
+							<th>单位性质</th>
+							<th>单位地址</th>
+							<th>单位联系电话</th>
+							<th style="width: 20%;">操作</th>
+						</tr>
+					</thead>
+				</table>
+				<button class="btn btn-default delete">删除</button>
+			</div>
+		</div>
+	</div>
+	<form role="form" id="form">
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+						</button>
+						<h4 class="modal-title" id="myModalLabel">就业信息登记表</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="jobType" class="col-sm-4 control-label">就业类别</label>
+							<div class="col-sm-5">
+								<input type="text" class="form-control" id="jobType"
+									name="jobType" required="required">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="companyName" class="col-sm-4 control-label">工作(升学)单位名称</label>
+							<div class="col-sm-5">
+								<input type="text" class="form-control" id="companyName"
+									name="companyName" required="required">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="companyNature" class="col-sm-4 control-label">单位性质</label>
+							<div class="col-sm-5">
+								<input type="text" class="form-control" id="companyNature"
+									name="companyNature" required="required">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="phone" class="col-sm-4 control-label">单位联系电话</label>
+							<div class="col-sm-5">
+								<input type="text" class="form-control" id="phone" name="phone"
+									required="required">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="address" class="col-sm-4 control-label">单位地址</label>
+							<div class="col-sm-5">
+								<input type="text" class="form-control" id="address"
+									name="address" required="required">
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<div class="form-group">
+							<button type="submit" name="submit"
+								class="btn btn-default button-submit">提交</button>
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">取消</button>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="fileModel" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel" aria-hidden="true">
+			<input type="hidden">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+						</button>
+						<h4 class="modal-title">excel导入</h4>
+					</div>
+					<div class="modal-body">
+						<input type="file" id="file"/>
+					</div>
+					<div class="modal-footer">
+					<a class="btn btn-default btn-pass import"
+							href="/cms/importTeaJobTamplate" target="_blank">下载导入模板</a>
+						<button type="button" class="btn btn-default btn-pass import"
+							data-dismiss="modal">导入</button>
+						<button type="button" class="btn btn-default btn-nopass"
+							data-dismiss="modal">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</body>
+</html>

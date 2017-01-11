@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.cuckoo.cms.teacher.dao.TeaGrantDao">
+    	<resultMap id="teaGrantResultMap" type="com.cuckoo.cms.teacher.pojo.TeaGrant">
+		<id column="grantId" property="grantId" jdbcType="VARCHAR" ></id>
+		<result column="userId" property="userId" jdbcType="VARCHAR" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="proId" property="proId" jdbcType="VARCHAR" />
+		<result column="classId" property="classId" jdbcType="VARCHAR" />
+		<result column="grantType" property="grantType" jdbcType="VARCHAR" />
+		<result column="createTime" property="createTime" jdbcType="VARCHAR" />
+		<result column="applyTime" property="applyTime" jdbcType="VARCHAR" />
+		<result column="overTime" property="overTime" jdbcType="VARCHAR" />
+		<result column="description" property="description" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="VARCHAR" />
+		<result column="tenantId" property="tenantId" jdbcType="VARCHAR" />
+		<result column="departId" property="departId" jdbcType="VARCHAR" />
+		</resultMap>
+		
+		<resultMap id="teaIndexGrantResultMap" type="com.cuckoo.cms.teacher.pojo.TeaIndexGrant">
+		<id column="grantId" property="grantId" jdbcType="VARCHAR" ></id>
+		<result column="userId" property="userId" jdbcType="VARCHAR" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="proId" property="proId" jdbcType="VARCHAR" />
+		<result column="classId" property="classId" jdbcType="VARCHAR" />
+		<result column="grantType" property="grantType" jdbcType="VARCHAR" />
+		<result column="createTime" property="createTime" jdbcType="VARCHAR" />
+		<result column="applyTime" property="applyTime" jdbcType="VARCHAR" />
+		<result column="overTime" property="overTime" jdbcType="VARCHAR" />
+		<result column="description" property="description" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="VARCHAR" />
+		<result column="tenantId" property="tenantId" jdbcType="VARCHAR" />
+		<result column="departId" property="departId" jdbcType="VARCHAR" />
+		</resultMap>
+		
+		<!-- 获取奖助列表 -->
+		<select id="getTeaGrantList" parameterType="string" resultMap="teaGrantResultMap">
+			<![CDATA[
+				select ts.userId,ts.stuNum,ts.stuName,tg.grantId,tg.name,tp.proName,
+						tc.className,tg.grantType,tg.createTime,tg.applyTime,
+						tg.overTime,tg.description,tg.status,tga.applyId  
+					from t_grant tg 
+					left join t_grant_apply tga 
+						on tga.grantId = tg.grantId AND tga.status != '3'
+					left join t_student ts 
+						on ts.userId = tga.userId AND ts.status='0' 
+					left join t_profession tp 
+						on tp.proId = ts.proId 
+					left join t_class tc 
+						on tc.classId = ts.classId 
+					left join t_master_class tms 
+						on tms.classId = tc.classId 
+					left join t_teacher tt 
+						on tt.userId = tms.userId AND tt.userId = #{0} 
+					left join t_user tu 
+						on tu.userId = tt.userId AND tu.tenantId = #{1} 
+						where tg.status='0'
+			]]>
+		</select>
+		
+		<!-- 创建奖助 -->
+		<insert id="createTeaGrantInfo" parameterType="com.cuckoo.cms.teacher.pojo.req.TeaGrantAddReq" 
+					useGeneratedKeys="true" keyProperty="grantId">
+			<![CDATA[
+				insert into t_grant (userId,name,proId,classId,grantType,applyTime,
+										overTime,description,departId)
+								values 
+									(#{userId},
+									 #{name},
+									 #{proId},
+									 #{classId},
+									 #{grantType},
+									 #{applyTime},
+									 #{overTime},
+									 #{description},
+									 #{departId})
+			]]>
+		</insert>
+		
+		<!-- 教师端首页SQL -->
+		<!-- 获取前八条未处理的奖助消息 -->
+		<select id="getTeaGrantUntreatedList" parameterType="string" resultMap="teaIndexGrantResultMap">
+			<![CDATA[
+				 select a.* from(select tga.applyId,tga.grantId,tg.name,tga.userId,
+				 		tp.proName,tc.className,tga.creatTime,tga.status,ts.stuNum,ts.stuName,tg.grantType,
+				 		tg.createTime,tg.applyTime,tg.description 
+					from t_grant_apply tga 
+						left join t_grant tg on tg.grantId = tga.grantId AND tg.status='0' 
+						left join t_student ts on ts.userId = tga.userId AND ts.status='0' 
+						left join t_profession tp on tp.proId = ts.proId 
+						left join t_class tc on tc.classId = ts.classId 
+						left join t_master_class tms on tms.classId = tc.classId 
+						left join t_teacher tt on tt.userId = tms.userId AND tt.status='0' AND tt.userId=#{0}
+						left join t_user tu on tu.userId = tt.userId AND tu.status='0'  AND tu.tenantId=#{1}
+						where tga.status='0') a limit 0,8
+			]]>
+		</select>
+		
+		
+		
+		</mapper>

@@ -1,0 +1,241 @@
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+}
+.top{
+    height: 100%;
+    width: 100%;
+    padding: 1.5625% 1.5625%;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+.top-box{
+    width: 100%;
+    height: 88%;
+    padding: 1.5625%;
+    background-color: #ffffff;
+}
+.top-box-head{
+    height: 7.96%;
+    width: 100%;
+    border-bottom: 1px solid #dddddd;
+}
+.top-box-head span{
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 2px;
+    margin-bottom: 1.76%;
+    padding-left: 8px;
+    border-left: 4px solid #69baae;
+}
+.top-box-body{
+    width: 100%;
+    padding-top: 1.5625%;
+}
+.top-ul{
+    background-color: #69baae;
+    float: left;
+    width: 100%;
+    height: 50px;
+    padding: 6px 20px;
+}
+/*下拉式搜索框定制*/
+.top-ul li:nth-child(2){
+    margin-left: 50px;
+    margin-top: 4px;
+}
+.top-ul form select{
+    color: #ababab;
+    width: 60px;
+    height: 30px;
+    outline: none;
+    padding-left: 10px;
+    border: 1px solid #ddd;
+}
+.top-ul form select:first-child{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.top-ul form select:nth-child(2){
+    margin: 0 -3px;
+    border-left: none;
+    border-right: none;
+}
+.top-ul form input{
+    width: 60px;
+    height: 30px;
+    color: #ababab;
+    border: 1px solid #ddd;
+    padding-left: 15px;
+}
+.top-ul form input:focus{
+    outline: none;
+}
+.top-ul form .search-button{
+    background: url("../../images/search.png") no-repeat 5px 5px;
+    background-color: #ffffff;
+    width: 30px;
+    height: 30px;
+    margin-left: -4px;
+    margin-top: -2px;
+    border: 1px solid #ddd;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.search-button:focus, .search-button:active:focus{
+    outline: none;
+    outline-offset: 0;
+}
+.search-button:active{
+    box-shadow: none;
+}
+
+.top-ul li{
+    float: left;
+    color: #ffffff;
+}
+/*.top-ul li:last-child{
+    float: right;
+}*/
+.top-ul li img{
+    margin-bottom: 3px;
+}
+.top-ul li span{
+    font-size: 15px;
+    display: inline-block;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.top-box-head a{
+    position: relative;
+    top: -6px;
+}
+.btn-self1{
+    font-size: 14px;
+    height: 38px;
+    width: 100px;
+    padding: 0;
+    color: #ababab;
+    background-color: #ffffff;
+    margin-left: 10px;
+}
+.btn-self2{
+    font-size: 13px;
+    height: 30px;
+    width: 100px;
+    padding: 0;
+    color: #ffffff;
+    background-color: #69baae;
+}
+.title-ul,
+.content-ul{
+    background-color: #ffffff;
+    color: #69baae;
+    float: left;
+    display: table;
+    width: 100%;
+    height: 50px;
+    border: 1px solid #dddddd;
+}
+.content-ul{
+    border-top: none;
+    color: #000;
+}
+.title-ul li,
+.content-ul li{
+    text-align: center;
+    font-size: .9em;
+    border-left: 1px solid #dddddd;
+    width: 7.69%;
+    height: 48px;
+    display:table-cell;
+    vertical-align:middle;
+}
+.title-ul li:first-child,
+.content-ul li:first-child{
+    width: 3.85%;
+    border-left: none;
+}
+.title-ul li:last-child,
+.content-ul li:last-child{
+    width: 19.25%;
+}
+.content-ul li a{
+    color: #30AAFF;
+    margin-left: 30px;
+}
+.content-ul li a:first-child{
+    margin-left: 0;
+}
+/*页码定制*/
+.foot-box{
+    width: 100%;
+    height: 12%;
+    padding: 1.5625%;
+}
+.foot-box .foot-btn{
+    float: left;
+    margin-top: 3px;
+}
+.foot-box .btn-self2:not(:first-child){
+    margin-left: 20px;
+}
+.foot-box .foot-page{
+    float: right;
+}
+.foot-box .foot-page .foot-page-bar{
+    float: left;
+}
+.foot-box .foot-page .foot-page-bar a{
+    float: left;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 3px 5px;
+    font-size: 1.17em;
+    padding: 4px;
+    text-align: center;
+    line-height: 1.8;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+}
+.foot-box .foot-page .foot-page-bar a.active{
+    background-color: #69baae;
+    color: #ffffff;
+    cursor: default;
+}
+.foot-box .foot-page .foot-page-bar a.pre-page,
+.foot-box .foot-page .foot-page-bar a.next-page{
+    color: #000000;
+    width: 60px;
+    background-color: #DDDDDD;
+}
+.foot-box .foot-page .foot-page-bar a.no-page{
+    color: #ababab;
+    cursor: default;
+}
+.foot-box .foot-page .total-page{
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    margin: 3px 0;
+    font-size: 1.17em;
+    padding: 4px;
+    text-align: center;
+    line-height: 2;
+}
+option{
+    width: 50px;
+}
+thead{
+	font-size: .6em
+}
+td,th{
+	text-align: center
+}
+a{
+	cursor:pointer;
+}

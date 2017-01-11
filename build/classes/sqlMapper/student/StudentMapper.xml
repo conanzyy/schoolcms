@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.cuckoo.cms.student.dao.StudentInfoDao">
+
+
+<resultMap id="studentResultMap" type="com.cuckoo.cms.student.pojo.Student">
+		<id column="userId" property="userId" jdbcType="VARCHAR" ></id>
+		<result column="stuNum" property="stuNum" jdbcType="VARCHAR" />
+		<result column="stuName" property="stuName" jdbcType="VARCHAR" />
+		<result column="sex" property="sex" jdbcType="VARCHAR" />
+		<result column="collegeId" property="collegeId" jdbcType="VARCHAR" />
+		<result column="departId" property="departId" jdbcType="VARCHAR" />
+		<result column="proId" property="proId" jdbcType="VARCHAR" />
+		<result column="classId" property="classId" jdbcType="VARCHAR" />
+		<result column="enterTime" property="enterTime" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="VARCHAR" />
+		<result column="national" property="national" jdbcType="VARCHAR" />
+		<result column="dateBirth" property="dateBirth" jdbcType="VARCHAR" />
+		<result column="dormitory" property="dormitory" jdbcType="VARCHAR" />
+		<result column="studentType" property="studentType" jdbcType="VARCHAR" />
+		<result column="oneChild" property="oneChild" jdbcType="VARCHAR" />
+		<result column="medical" property="medical" jdbcType="VARCHAR" />
+		<result column="address" property="address" jdbcType="VARCHAR" />
+		<result column="phone" property="phone" jdbcType="VARCHAR" />
+		<result column="familyName1" property="familyName1" jdbcType="VARCHAR" />
+		<result column="familySex1" property="familySex1" jdbcType="VARCHAR" />
+		<result column="familyRelation1" property="familyRelation1" jdbcType="VARCHAR" />
+		<result column="familyAddress1" property="familyAddress1" jdbcType="VARCHAR" />
+		<result column="familyZipCode1" property="familyZipCode1" jdbcType="VARCHAR" />
+		<result column="familyPhone1" property="familyPhone1" jdbcType="VARCHAR" />
+		<result column="familyMarriage1" property="familyMarriage1" jdbcType="VARCHAR" />
+		<result column="familyName2" property="familyName2" jdbcType="VARCHAR" />
+		<result column="familySex2" property="familySex2" jdbcType="VARCHAR" />
+		<result column="familyRelation2" property="familyRelation2" jdbcType="VARCHAR" />
+		<result column="familyAddress2" property="familyAddress2" jdbcType="VARCHAR" />
+		<result column="familyZipCode2" property="familyZipCode2" jdbcType="VARCHAR" />
+		<result column="familyPhone2" property="familyPhone2" jdbcType="VARCHAR" />
+		<result column="familyMarriage2" property="familyMarriage2" jdbcType="VARCHAR" />
+		<result column="prizeInfo" property="prizeInfo" jdbcType="VARCHAR" />
+</resultMap>
+		<select id="getStudentInfo"   resultMap="studentResultMap">
+ <![CDATA[
+  		SELECT  ts.userId,ts.stuNum,ts.stuName,ts.sex,ts.collegeId,ts.departId,ts.proId,ts.classId,
+  				ts.enterTime,ts.national,ts.dateBirth,ts.dormitory,ts.studentType,ts.oneChild,ts.medical,ts.address,ts.phone,
+  				ts.familyName1,ts.familysex1,ts.familyRelation1,ts.familyAddress1,ts.familyZipCode1,ts.familyPhone1,
+  				ts.familyMarriage1,ts.familyName2,ts.familysex2,ts.familyRelation2,ts.familyAddress2,ts.familyZipCode2,
+  				ts.familyPhone2,ts.familyMarriage2,ts.prizeInfo 
+  			FROM t_student ts 
+  		LEFT JOIN t_user tu ON ts.userId = tu.userId 
+  			WHERE  ts.userId=#{0} AND tu.tenantId=#{1}
+  						AND ts.status='0' 
+  						AND tu.status='0'
+    ]]>
+  </select>
+  <!-- LEFT JOIN t_class tc ON ts.classId = tc.classId 
+  	   LEFT JOIN t_profession tp ON ts.proId = tp.proId -->
+  	   
+  		<update id="updateStudentInfo">
+  		<![CDATA[
+    			update t_student set stuName		=#{0},
+    								 address		=#{1},
+    								 phone  		=#{2},
+    								 familyName1	=#{3},
+    								 familySex1		=#{4},
+    								 familyRelation1=#{5},
+    								 familyAddress1	=#{6},
+    								 familyZipCode1	=#{7},
+    								 familyPhone1  	=#{8},
+    								 familyMarriage1=#{9},
+    								 familyName2	=#{10},
+    								 familySex2		=#{11},
+    								 familyRelation2=#{12},
+    								 familyAddress2	=#{13},
+    								 familyZipCode2 =#{14},
+    								 familyPhone2	=#{15},
+    								 familyMarriage2=#{16},
+    								 prizeInfo		=#{17}
+    								 where userId=#{18}
+    								 	AND status='0'
+     ]]>
+	</update>
+  </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cuckoo.cms.teacher.dao.IOrderRecordManagerDao">
+	<resultMap id="orderrecordResultMap" type="com.cuckoo.cms.teacher.pojo.OrderRecord">
+		<id column="orderRecordId" property="orderRecordId" jdbcType="VARCHAR" />
+		<result column="stuName" property="stuName" jdbcType="VARCHAR" />
+		<result column="stuNum" property="stuNum" jdbcType="VARCHAR" />
+		<result column="proName" property="proName" jdbcType="VARCHAR" />
+		<result column="className" property="className" jdbcType="VARCHAR" />
+		<result column="talkTime" property="talkTime" jdbcType="VARCHAR" />
+		<result column="talkBackground" property="talkBackground" jdbcType="VARCHAR" />
+		<result column="prombleType" property="prombleType" jdbcType="VARCHAR" />
+		<result column="talkCount" property="talkCount" jdbcType="VARCHAR" />
+		<result column="talkEffect" property="talkEffect" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="VARCHAR" />
+	</resultMap>
+	<select id="getOrderRecordList" parameterType="string" resultMap="orderrecordResultMap">
+<![CDATA[
+select ts.stuName,tor.stuNum,tpf.proName,tc.className,tor.orderRecordId,
+tor.talkTime,tor.talkBackground,tor.prombleType,tor.talkCount,tor.talkEffect,tor.status from t_order_record tor
+ join t_student ts on ts.stuNum = tor.stuNum and ts.status='0'
+ join t_user tu on tu.userId = ts.userId 
+ left join t_class tc on tc.classId =ts.classId 
+ left join t_profession tpf on tpf.proId = ts.proId  
+ left join t_master_class tmc on tmc.classId = tc.classId
+  where  tu.tenantId =#{tenantId}  and tu.status='0' and tor.status='0'
+order by tor.orderRecordId ASC
+ ]]>
+	</select>
+	
+
+<select id="getOrderRecordInfo" resultMap="orderrecordResultMap">
+	<![CDATA[
+	
+	select ts.stuName,ts.stuNum,tpf.proName,tc.className,tor.orderRecordId,
+ tor.talkTime,tor.talkBackground,tor.prombleType,tor.talkCount,tor.talkEffect,tor.status from t_order_record tor
+ join t_student ts on ts.stuNum = tor.stuNum and ts.status='0'
+ join t_user tu on ts.userId = tu.userId
+ left join t_class tc on tc.classId =ts.classId 
+ left join t_profession tpf on tpf.proId = ts.proId  
+ left join t_master_class tmc on tmc.classId = tc.classId
+  where  tu.status='0' and tor.orderRecordId =#{orderRecordId} 
+	]]>
+	</select>
+	
+		<insert id="createOrderRecord" parameterType="com.cuckoo.cms.teacher.pojo.OrderRecord" useGeneratedKeys="true" keyProperty="orderRecordId" >
+<![CDATA[
+insert into t_order_record(stuNum,talkBackground,prombleType,talkCount,talkEffect) values(#{stuNum},#{talkBackground},#{prombleType},#{talkCount},#{talkEffect}) 
+ ]]>
+	</insert>
+
+<update id="deleteOrderRecord" parameterType="String">
+	<![CDATA[
+	update t_order_record set status='1' where  orderRecordId=#{0}  and status='0'
+	 ]]>
+	</update>
+	
+</mapper> 

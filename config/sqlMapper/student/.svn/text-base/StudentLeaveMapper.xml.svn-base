@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.cuckoo.cms.student.dao.LeaveInfoDao">
+    <resultMap id="LeaveResultMap" type="com.cuckoo.cms.student.pojo.Leave">
+    	<id column="leaveId" property="leaveId" jdbcType="VARCHAR" ></id>
+		<result column="userId" property="userId" jdbcType="VARCHAR" />
+		<result column="applyTime" property="applyTime" jdbcType="VARCHAR" />
+		<result column="cause" property="cause" jdbcType="VARCHAR" />
+		<result column="leaveDays" property="leaveDays" jdbcType="VARCHAR" />
+		<result column="leaveTime" property="leaveTime" jdbcType="VARCHAR" />
+		<result column="comeTime" property="comeTime" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="VARCHAR" />
+		<result column="type" property="type" jdbcType="VARCHAR" />
+		<result column="courseId" property="courseId" jdbcType="VARCHAR" />
+    </resultMap>
+    
+    	<!-- 获取请假信息 -->
+    	<select id="getLeaveInfo"   resultMap="LeaveResultMap">
+ <![CDATA[
+  		SELECT tl.leaveId,tl.userId,ts.stuName,ts.stuNum,tc.className,tl.applyTime,tl.cause,tl.leaveDays,
+  			   tl.leaveTime,tl.comeTime,tl.status,tl.type,tl.courseId 
+  			FROM t_leave tl 
+  			LEFT JOIN t_student ts 
+  				ON tl.userId = ts.userId AND ts.status = '0' 
+  			LEFT JOIN t_class tc 
+  				ON tc.classId = ts.classId 
+  			LEFT JOIN t_user    tu 
+  				ON ts.userId = tu.userId AND tu.status = '0' 
+  										AND tu.userId=#{0} 
+  				where tl.status!='3' ORDER BY tl.applyTime DESC
+    ]]>
+  </select>
+  
+   <!-- 销假 -->
+   <update id="updateLeaveInfo">
+   		<![CDATA[
+   			UPDATE t_leave SET status='3' WHERE leaveId=#{leaveId} AND userId=#{userId}
+   		]]>
+   </update>
+   
+    <!-- 新增课假 -->
+   <insert id="createCourseLeave" parameterType="com.cuckoo.cms.student.pojo.req.LeaveAddReq" 
+    							   useGeneratedKeys="true" keyProperty="leaveId" >
+    	<![CDATA[
+   			insert into t_leave(userId,cause,leaveDays,leaveTime,comeTime,status,type,courseId) 
+   							values 
+   							   (#{userId},#{cause},
+   							   #{leaveDays},#{leaveTime},#{comeTime},'0','0',
+   							   #{courseId})
+   		]]>
+    </insert>
+    <!-- 新增校假 -->
+    <insert id="createSchoolLeave" parameterType="com.cuckoo.cms.student.pojo.req.LeaveAddReq" 
+    							   useGeneratedKeys="true" keyProperty="leaveId" >
+    	<![CDATA[
+   			insert into t_leave(userId,cause,leaveDays,leaveTime,comeTime,status,type,courseId) 
+   							values 
+   							   (#{userId},#{cause},
+   							   #{leaveDays},#{leaveTime},#{comeTime},'0','1',
+   							   #{courseId})
+   		]]>
+    </insert>
+    
+    </mapper>

@@ -1,0 +1,92 @@
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+}
+input,textarea{
+	border:none;
+}
+.fl{
+	float: left;
+}
+.top{
+    height: 92.59%;
+    width: 100%;
+    padding: 1.5625% 1.5625%;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+.top-box{
+    width: 100%;
+    height: 100%;
+    padding: 1.5625%;
+    background-color: #ffffff;
+}
+.top-box-head{
+    height: 7.96%;
+    width: 100%;
+    border-bottom: 1px solid #dddddd;
+}
+.top-box-head span{
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 2px;
+    margin-bottom: 1.76%;
+    padding-left: 8px;
+    border-left: 4px solid #69baae;
+}
+.top-box-body{
+    width: 100%;
+    padding-top: 1.5625%;
+    padding-left: 1.5625%;
+}
+.top-box-body table,
+.top-box-body table th,
+.top-box-body table td{
+    border: 1px solid #dddddd;
+}
+.top-box-body table th,
+.top-box-body table td{
+    height: 40px;
+    line-height: 20px;
+    text-align: center;
+}
+.top-box-body table th{
+    font-size: 16px;
+    font-weight: bold;
+}
+.top-box-body table td label{
+    font-weight: normal;
+}
+.top-box-body table td input[type="text"],
+.top-box-body table td input[type="number"],
+.top-box-body table td input[type="tel"]{
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
+    padding-left: 10px;
+    width: 100%;
+}
+.top-box-body table td textarea{
+    width: 100%;
+    font-size: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.table-col1{
+    width: 120px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.top-box-body .btn{
+    background-color: #69baae;
+    color: #ffffff;
+    margin-right: 20px;
+    outline: none;
+}
+.top-box-body .btnBox span{
+	margin-top: 20px;
+	overflow:hidden;
+	float:right;
+}

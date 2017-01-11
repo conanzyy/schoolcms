@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:lang="http://www.springframework.org/schema/lang" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+	http://www.springframework.org/schema/util
+	http://www.springframework.org/schema/util/spring-util-2.0.xsd
+	http://www.springframework.org/schema/lang
+	http://www.springframework.org/schema/lang/spring-lang-2.0.xsd
+	http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+
+
+<bean id="mysqlDataSource" class="org.apache.tomcat.jdbc.pool.DataSource" destroy-method="close">
+<property name="poolProperties">
+<bean class="com.cuckoo.cms.common.MyDatasourcePropertiesFactofy">
+<property name="url" value="${mysql.url}"/>
+<property name="driverClassName" value="${mysql.driver}"/>
+<property name="username" value="${mysql.username}"/>
+<property name="password" value="${mysql.password}"/>
+</bean>
+</property>
+</bean>
+
+<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+<property name="dataSource" ref="mysqlDataSource"/>
+</bean>
+
+<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+<property name="dataSource" ref="mysqlDataSource"/>
+<property name="typeAliasesPackage" value="com.cuckoo.cms.common.user.pojo,com.cuckoo.cms.admin.pojo,com.cuckoo.cms.student.pojo,com.cuckoo.cms.teacher.pojo"/>
+<property name="mapperLocations" value="classpath*:sqlMapper/**/*Mapper.xml"/> 
+</bean>
+
+<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+<property name="basePackage" value="com.cuckoo.cms"/>
+</bean>
+
+
+</beans>

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/01-design/!svn/ver/514/code/cms/src/com/cuckoo/cms/admin/dao
+END
+IRoleManagerDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/01-design/!svn/ver/48/code/cms/src/com/cuckoo/cms/admin/dao/IRoleManagerDao.java
+END
+ICounselorDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/01-design/!svn/ver/586/code/cms/src/com/cuckoo/cms/admin/dao/ICounselorDao.java
+END

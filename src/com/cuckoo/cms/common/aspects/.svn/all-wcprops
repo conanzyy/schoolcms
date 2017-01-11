@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/01-design/!svn/ver/20/code/cms/src/com/cuckoo/cms/common/aspects
+END
+DaoAspect.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/01-design/!svn/ver/4/code/cms/src/com/cuckoo/cms/common/aspects/DaoAspect.java
+END
+ControllerAspect.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/01-design/!svn/ver/20/code/cms/src/com/cuckoo/cms/common/aspects/ControllerAspect.java
+END

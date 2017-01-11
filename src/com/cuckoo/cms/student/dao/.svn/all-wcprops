@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/01-design/!svn/ver/558/code/cms/src/com/cuckoo/cms/student/dao
+END
+IOrderCounselorDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/01-design/!svn/ver/558/code/cms/src/com/cuckoo/cms/student/dao/IOrderCounselorDao.java
+END
+IPracticeDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/01-design/!svn/ver/85/code/cms/src/com/cuckoo/cms/student/dao/IPracticeDao.java
+END
+LeaveInfoDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/01-design/!svn/ver/263/code/cms/src/com/cuckoo/cms/student/dao/LeaveInfoDao.java
+END
+StudentInfoDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/01-design/!svn/ver/299/code/cms/src/com/cuckoo/cms/student/dao/StudentInfoDao.java
+END
+IMyOrderDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/01-design/!svn/ver/558/code/cms/src/com/cuckoo/cms/student/dao/IMyOrderDao.java
+END
+INoticeManagerDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/01-design/!svn/ver/593/code/cms/src/com/cuckoo/cms/student/dao/INoticeManagerDao.java
+END

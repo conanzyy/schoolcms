@@ -1,0 +1,122 @@
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+}
+.top{
+    height: 92.59%;
+    width: 100%;
+    padding: 1.5625% 1.5625%;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+.top-box{
+    width: 100%;
+    height: 100%;
+    padding: 1.5625%;
+    background-color: #ffffff;
+}
+.top-box-head{
+    height: 7.96%;
+    width: 100%;
+    border-bottom: 1px solid #dddddd;
+}
+.top-box-head span{
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 2px;
+    margin-bottom: 1.76%;
+    padding-left: 8px;
+    border-left: 4px solid #69baae;
+}
+.top-box-body{
+    width: 100%;
+    padding-top: 1.5625%;
+}
+.top-ul{
+    background-color: #69baae;
+    float: left;
+    width: 100%;
+    height: 50px;
+    padding: 6px 20px;
+}
+.top-ul li{
+    float: left;
+    color: #ffffff;
+}
+.top-ul li:last-child{
+    float: right;
+}
+.top-ul li img{
+    margin-bottom: 3px;
+}
+.top-ul li span{
+    font-size: 15px;
+    display: inline-block;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.btn-self1{
+    font-size: 14px;
+    height: 38px;
+    width: 100px;
+    padding: 0;
+    color: #ababab;
+    background-color: #ffffff;
+    margin-left: 10px;
+}
+.title-ul,
+.content-ul{
+    background-color: #ffffff;
+    color: #69baae;
+    /*float: left;*/
+    width: 100%;
+    height: 50px;
+    display: table;
+    border: 1px solid #dddddd;
+}
+.content-ul{
+    border-top: none;
+    color: #000;
+}
+.title-ul li,
+.content-ul li{
+    text-align: center;
+    font-size: 1.25em;
+    border-left: 1px solid #dddddd;
+    width: 7.69%;
+    height: 48px;
+    display:table-cell;
+    vertical-align:middle;
+}
+.title-ul li:first-child,
+.content-ul li:first-child{
+    width: 3.85%;
+    border-left: none;
+}
+.title-ul li:last-child,
+.content-ul li:last-child{
+    width: 19.25%;
+}
+.content-ul li a{
+    color: #30AAFF;
+    margin-left: 30px;
+}
+.content-ul li a:first-child{
+    margin-left: 0;
+}
+.btn-self1{
+	line-height:38px;
+}
+.form-group{
+	height:60px;
+	margin:0;
+}
+.form-group>label{
+	font-size:12px;
+	line-height:38px;
+}
+td,th{
+	text-align:center;
+}

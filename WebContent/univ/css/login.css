@@ -1,0 +1,131 @@
+body {
+  background-color: #fff;
+  background:none repeat scroll 0 0 #fafafa;
+  font-family:Helvetica,Myriad,Arial,"Microsoft Yahei",SimSun,Tahomi
+}
+.navbar{
+	background:none repeat scroll 0 0 #fff;
+	border-radius:0;
+	margin:0px;
+	border-bottom:1px solid #e3e3e3 !important;
+	box-shadow:none;
+}
+ul{
+	list-style:none;
+}
+.navbar-collapse.collapse{
+	padding-top:12px;
+}
+.form-signin {
+  max-width: 330px;
+  padding: 30px 20px 40px 20px;
+  width:300px;
+}
+.navbar-logo{
+	height:70px;
+	display:inline-block;
+	width:250px;
+	padding:0px;
+	background:url("../images/logo.png") 0px 12px no-repeat
+}
+.backLogo{
+	background:url("../images/background.png") 0px 23px no-repeat;
+	height:357px;
+	margin:220px 100px 0 0;
+	float:left;
+	width:545px;
+	position:absolute;
+	left:130px;
+}
+.clr{
+	clear:both;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+  margin-top:30px;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  margin:0 0 15px 0;  
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin:0 0 15px 0;
+}
+.alert-info{
+	padding:0;
+	margin-bottom:20px;
+	margin:0px 0 0 0px;
+	border:none;
+	color:#e4002b;
+	letter-spacing:3px;
+	line-height:30px;
+	height:30px;
+	background:none;
+}
+.title{
+	margin:15px;
+	padding:0px;
+	font-weight:600;
+	vertical-align:middle;
+	font-size:16px;
+}
+ul.navleader >li>a{
+	color:#3c3434 !important;
+}
+ul.navleader >li>a:hover{
+	color:#157ab5 !important;
+	background-color:#fff !important;
+	text-decoration:none;
+}
+ul.navleader a>i {
+	padding:0 10px 0 0 !important;
+	color:#e3e3e3
+	
+}
+.loginPanel{
+	border:1px solid #d4d4d4 !important;
+	float:left;
+	margin:250px 100px 0 0;
+	position:absolute;
+	right:60px;
+}
+.loginTilte{
+    padding-top: 15px;
+    height: 50px;
+    border-bottom: 1px solid #d4d4d4 !important;
+    background-color: #f5f5f5;
+    font-size: 16px;
+}
+.loginTilte p{
+	text-align:center;
+}
+.loginBtn{
+	padding:5px !important;
+	margin-top:20px !important;
+	background-color:#69baae !important;
+	color:#fff;
+}
+.clr{
+	clear:both;
+}

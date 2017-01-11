@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.cuckoo.cms.teacher.dao.TeaGrantApplyDao">
+    	<resultMap id="teaGrantApplyResultMap" type="com.cuckoo.cms.teacher.pojo.TeaGrantApply">
+		<id column="applyId" property="applyId" jdbcType="VARCHAR" ></id>
+		<result column="grantId" property="grantId" jdbcType="VARCHAR" />
+		<result column="userId" property="userId" jdbcType="VARCHAR" />
+		<result column="creatTime" property="creatTime" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="VARCHAR" />
+		</resultMap>
+		<!-- applyId,tga.userId,ts.stuNum,ts.stuName,tg.grantId,tg.name,tp.proName,
+						tc.className,tg.grantType,tg.createTime,tg.applyTime,
+						tg.overTime,tg.description,tg.status -->
+		<!-- 获取奖助详情 -->
+		<select id="getTeaGrantApplyInfo" resultMap="teaGrantApplyResultMap">
+			<![CDATA[
+				select tga.* 
+					from t_grant_apply tga 
+					left join t_grant tg 
+						on tg.grantId = tga.grantId AND tg.status='0'
+					left join t_student ts 
+						on ts.userId = tga.userId AND ts.status='0' 
+					left join t_profession tp 
+						on tp.proId = ts.proId 
+					left join t_class tc 
+						on tc.classId = ts.classId 
+					left join t_master_class tms 
+						on tms.classId = tc.classId 
+					left join t_teacher tt 
+						on tt.userId = tms.userId AND tt.status='0' 
+					left join t_user tu 
+						on tu.userId = tt.userId AND tu.status='0' 
+						where tga.applyId=#{applyId} 
+							  AND tga.status!='3'
+			]]>
+		</select>
+		
+		<!-- 审核奖助申请_审核通过 -->
+		<update id="updateTeaGrantApplyInfoYes" parameterType="string">
+			<![CDATA[
+				update t_grant_apply set status='1' WHERE applyId=#{applyId}
+			]]>
+		</update>
+		
+		<!-- 审核奖助申请_审核未通过 -->
+		<update id="updateTeaGrantApplyInfoNo" parameterType="string">
+			<![CDATA[
+				update t_grant_apply set status='2' WHERE applyId=#{applyId}
+			]]>
+		</update>
+		
+		
+		<!-- 删除学生奖助信息 -->
+		<update id="deleteTeaGrantApplyInfo" parameterType="string">
+			<![CDATA[
+				update t_grant_apply set status='3' WHERE applyId=#{applyId}
+			]]>
+		</update>
+		
+		</mapper>

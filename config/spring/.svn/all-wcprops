@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/01-design/!svn/ver/12/code/cms/config/spring
+END
+mysql-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/01-design/!svn/ver/4/code/cms/config/spring/mysql-config.xml
+END
+application-context.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/01-design/!svn/ver/519/code/cms/config/spring/application-context.xml
+END

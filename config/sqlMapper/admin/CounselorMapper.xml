@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cuckoo.cms.admin.dao.ICounselorDao">
+	<resultMap id="counselorResultMap" type="com.cuckoo.cms.admin.pojo.Counselor">
+		<id column="counselorId" property="counselorId" jdbcType="VARCHAR" />
+		<result column="userId" property="userId" jdbcType="VARCHAR" />
+		<result column="teaNum" property="teaNum" jdbcType="VARCHAR" />
+		<result column="teaName" property="teaName" jdbcType="VARCHAR" />
+		<result column="researchArea" property="researchArea" jdbcType="VARCHAR" />
+		 <result column="consultingArea" property="consultingArea" jdbcType="VARCHAR" />
+		  <result column="image" property="image" jdbcType="VARCHAR" />
+		   <result column="status" property="status" jdbcType="VARCHAR" />
+		 <result column="tenantId" property="tenantId" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<select id="getCounselorList" parameterType="string" resultMap="counselorResultMap">
+
+select tc.counselorId,tc.userId,tt.teaNum,tt.teaName,tc.researchArea,tc.consultingArea,tc.image ,tc.status  from t_counselor tc
+ inner join t_user tu on tu.userId =tc.userId
+ inner join t_teacher tt on tt.userId=tc.userId
+ where tc.tenantId=#{tenantId} and tc.status='0' and tu.status='0'
+	</select>
+ <insert id="createCounselor" parameterType="com.cuckoo.cms.admin.pojo.Counselor">
+ <![CDATA[
+ insert into t_counselor(userId,researchArea,consultingArea,image,tenantId) values(#{userId},#{researchArea},#{consultingArea},#{image},#{tenantId})
+  ]]>
+ </insert>
+ 
+ <select id="getCounselorByUserId"  parameterType="com.cuckoo.cms.common.user.pojo.User">
+ select counselorId from t_counselor where userId=#{userId} and status='0' and tenantId=#{tenantId}
+ </select>
+ <select id="teacherByTeaNum" parameterType="com.cuckoo.cms.admin.pojo.Counselor" resultType="string">
+ 
+ select tt.userId from t_teacher tt
+  left join t_user tu on tu.userId =tt.userId
+  where tt.teaNum=#{teaNum} and tu.tenantId=#{tenantId} and tt.teaName=#{teaName}
+ 
+ </select>
+ 
+ <update id="deleteCounselor" >
+ 
+ update t_counselor tc set tc.status='1' where tc.status='0' and tc.tenantId=#{tenantId} and tc.counselorId=#{counselorId} 
+ 
+ </update>
+ 
+ 
+ <update id="updateCounselor" parameterType="com.cuckoo.cms.admin.pojo.Counselor">
+ update t_counselor tc set tc.userId=#{userId},tc.researchArea=#{researchArea},tc.consultingArea=#{consultingArea},tc.image=#{image}
+ where tc.tenantId=#{tenantId} and tc.status='0' and tc.counselorId=#{counselorId}
+ 
+ </update>
+</mapper> 

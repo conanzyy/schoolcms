@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学生信息管理系统</title>
+<!-- thirdparty css -->
+<link rel="stylesheet" href="../../thirdparty/bootstrap-3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/jsTree-3.3.3/dist/themes/default/style.min.css">
+<!-- personal css -->
+<link rel="stylesheet" href="../../css/index.css">
+<link rel="stylesheet" href="../../css/bonusMg.css">
+<!-- thirdparty js -->
+<script src="../../thirdparty/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script src="../../thirdparty/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../../thirdparty/jsTree-3.3.3/dist/jstree.min.js"></script>
+<!-- personal js -->
+<script src="../../js/student/layer.js"></script>
+<script src="../../js/student/bonusMg.js"></script>
+<script src="../../js/utils/tablesStyleUtils.js"></script>
+</head>
+<body>
+<div class="container top">
+    <div class="top-box">
+        <div class="top-box-head">
+            <span>奖助管理</span>
+        </div>
+        <div class="top-box-body">
+            <ul class="top-ul">
+                <li>
+                    <div>
+                        <img src="../../images/xinxibiao.png" alt=""/>
+                        <span>奖项信息表</span>
+                    </div>
+                </li>
+            </ul>
+            <table id="bonusMgTable" class="display">
+		    	<thead>
+            		<tr>
+            			<th style="width:15px;"><input type='checkbox' id="checkAll"></th>
+		                <th style="width:30px">序号</th>
+		                <th>奖项名称</th>
+		                <th>所属专业</th>
+		                <th>班级</th>
+						<th>奖项级别</th>
+		                <th>申报开放时间</th>
+		                <th>申报截止时间</th>
+		                <th>奖项描述</th>
+		                <th style="width:100px">操作</th>
+            		</tr>
+            	</thead>
+			</table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

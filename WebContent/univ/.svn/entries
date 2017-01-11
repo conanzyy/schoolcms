@@ -1,0 +1,80 @@
+10
+
+dir
+549
+http://code.taobao.org/svn/01-design/code/cms/WebContent/univ
+http://code.taobao.org/svn/01-design
+
+
+
+2017-01-06T02:27:16.184261Z
+548
+gaohui
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+2799667c-4b2c-4be1-a326-e3a5e1da2ffa
+
+css
+dir
+
+images
+dir
+
+index.jsp
+file
+
+
+
+
+2017-01-07T01:30:24.752000Z
+59857fbbab11acd0ce8cfaa3caa873ce
+2017-01-01T05:04:33.805009Z
+471
+gjbjay
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8595
+
+js
+dir
+
+jsp
+dir
+
+thirdparty
+dir
+
+views
+dir
+

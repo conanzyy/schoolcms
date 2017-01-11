@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学生信息管理系统</title>
+<!-- thirdparty css -->
+<link rel="stylesheet" href="../../thirdparty/bootstrap-3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/jsTree-3.3.3/dist/themes/default/style.min.css">
+<!-- personal css -->
+<link rel="stylesheet" href="../../css/index.css">
+<link rel="stylesheet" href="../../css/careerReport.css">
+<!-- thirdparty js -->
+<script src="../../thirdparty/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script src="../../thirdparty/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../../thirdparty/jsTree-3.3.3/dist/jstree.min.js"></script>
+<!-- personal js -->
+<script src="../../js/student/leaveMg.js"></script>
+<script src="../../js/utils/tablesStyleUtils.js"></script>
+</head>
+<body>
+	<div class="container top">
+    <div class="top-box">
+        <div class="top-box-head">
+            <span>活动管理</span>
+        </div>
+        <div class="top-box-body">
+            <ul class="top-ul">
+                <li>
+                    <div>
+                        <span>职业性格测评</span>
+                    </div>
+                </li>
+            </ul>
+            <ul class="text-ul">
+                <li>
+                    <textarea>一苇职业性格测评系统是一份基于瑞士心理学家卡尔荣格心里类型理论的自我评估问卷。职业性格测评为了解人与人之间在日常生活中的正常分别提供了一个理性的结构。体会到人与人之间性格的差异并有建设性地去运用他们，是您职业性格测评的最基本的目的。同时，人们一般也会被有机会表达和运用自己所属性格类型的行业所吸引，并从中获得职业的满足感，而职业性格测评也会为您提供职业选择以及职场“生存”的积极建议。测评者可以通过93道自我评估问题，获得对于自我性格的初步认识，并基于性格探索，获得对于职业生涯发展的辅导与建议。答案也没有对错之分，请您按照您自己的想法或第一反应进行选择，而不要按照您的期望或者外界的要求进行选择。
+                    </textarea>
+                </li>
+                <li class="li-btn">
+                    <button class="btn-self2">提交反馈</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="top-box2">
+        <div class="top-box-head2">
+            <span>活动管理</span>
+        </div>
+        <div class="top-box-body2">
+            <div>测评结果 : 适合的职业包括律师、教师、研究工作者...</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

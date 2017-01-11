@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学生信息管理系统</title>
+<!-- thirdparty css -->
+<link rel="stylesheet" href="../../thirdparty/bootstrap-3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/bootstrap-3.3.7/css/fileinput.min.css">
+<!-- personal js -->
+<link rel="stylesheet" href="../../css/index.css">
+<!-- thirdparty js -->
+<script src="../../thirdparty/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script src="../../thirdparty/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../../thirdparty/bootstrap-3.3.7/js/fileinput.min.js"></script>
+<script src="../../thirdparty/bootstrap-3.3.7/js/fileinput_locale_zh.js"></script>
+<!-- personal js -->
+<script src="../../js/teacher/adviserMgr.js"></script>
+<script src="../../js/utils/tablesStyleUtils.js"></script>
+<script src="../../js/utils/fileInput.js"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row-fluid col-md-12 tableTop">
+			<p>咨询师管理</p>
+			<hr>
+			<div class="tableHead">
+				<img alt="" src="../../images/xinxibiao.png">
+				<p>咨询师表</p>
+			</div>
+			<table id="adviserTable" class="display">
+		    	<thead>
+            		<tr>
+            			<th><input type="checkbox" name="items"></th>
+		                <th>Id</th>
+		                <th>序号</th>
+		                <th>工号</th>
+		                <th>姓名</th>
+		                <th>研究方向</th>
+		                <th>咨询领域</th>
+		                <th>照片</th>
+		                <th>操作</th>
+            		</tr>
+            	</thead>
+			</table>
+		</div>
+	</div>
+	<!-- 添加咨询师 -->
+	<div class="modal fade" id="counselorPanel" tabindex="-1" role="dialog" aria-labelledby="counselorPanelLable" aria-hidden="true">
+    <div class="modal-dialog" style="width:700px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="counselorPanelLable">添加咨询师</h4>
+            </div>
+            <div class="modal-body">
+               <form class="form-inline" role="form">
+				  <div class="form-group">
+				    <label for="teaNum" class="col-sm-3 control-label">工号:</label>
+				    <div class="col-sm-3">
+				      <input type="text" class="form-control" id="teaNum" placeholder="请输入工号">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="teaName" class="col-sm-3 control-label">姓名:</label>
+				    <div class="col-sm-3">
+				      <input type="text" class="form-control" id="teaName" placeholder="请输入姓名">
+				    </div>
+				   </div>
+				</form>
+				<form class="form-inline longLable" role="form">
+				   <div class="form-group">
+				    <label for="researchArea" class="col-sm-4 control-label">研究方向:</label>
+				    <div class="col-sm-2">
+				      <input type="text" class="form-control" id="researchArea" placeholder="请输入研究方向">
+				    </div>
+				   </div>
+				   <div class="form-group" style="padding-left:35px;">
+				    <label for="consultingArea" class="col-sm-4 control-label">咨询领域:</label>
+				    <div class="col-sm-2">
+				      <input type="text" class="form-control" id="consultingArea" placeholder="请输入咨询领域">
+				    </div>
+				   </div>
+				</form>
+				<div class="imageInputTitle">
+					<label for="imageInput" class="col-sm-2 control-label">图片</label>
+					<div class="imageInputBody">
+						<input id="imageInput" class="form-control" type="file">
+					</div>
+				</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="submitBtn()" id="sub_Btn">确认</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+	</div>
+	<!-- 提示信息框-->
+	<div class="modal fade" id="execAlert" tabindex="-1" role="dialog" aria-labelledby="execAlertLable" aria-hidden="true">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	                <h4 class="modal-title" id="execAlertLable">提示信息</h4>
+	            </div>
+	            <div class="modal-body">
+	            	<p><i class="glyphicon glyphicon-exclamation-sign"><span id="execAlertContent"></span></i></p>
+	            </div>
+	            <div class="modal-footer">
+	                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="delSubmitBtn()">确认</button>
+	                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</body>
+</html>

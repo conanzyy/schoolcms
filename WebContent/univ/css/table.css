@@ -1,0 +1,44 @@
+table{
+    width:100%;
+}
+table,
+table th,
+table td{
+    border: 1px solid #dddddd;
+}
+table th,
+table td{
+    height: 40px;
+    line-height: 20px;
+    text-align: center;
+}
+table th{
+    font-size: 12px;
+    font-weight: bold;
+}
+table td label{
+    font-weight: normal;
+}
+table td input[type="text"],
+table td input[type="number"],
+table td input[type="tel"]{
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
+    padding-left: 10px;
+    width: 100%;
+    border:0;
+}
+table td textarea{
+    width: 100%;
+    font-size: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border:0;
+    outline:none;
+}
+.table-col1{
+    width: 120px;
+    padding-left: 5px;
+    padding-right: 5px;
+}

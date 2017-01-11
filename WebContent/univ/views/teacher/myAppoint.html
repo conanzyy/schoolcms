@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学生信息管理系统</title>
+<!-- thirdparty css -->
+<link rel="stylesheet" href="../../thirdparty/bootstrap-3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/dataTables.bootstrap.min.css">
+<!-- personal js -->
+<link rel="stylesheet" href="../../css/index.css">
+<!-- thirdparty js -->
+<script src="../../thirdparty/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script src="../../thirdparty/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<!-- personal js -->
+<script src="../../js/teacher/myAppoint.js"></script>
+<script src="../../js/utils/tablesStyleUtils.js"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row-fluid col-md-12 tableTop">
+			<p>我的预约</p>
+			<hr>
+			<div class="tableHead">
+			 	<img alt="" src="../../images/xinxibiao.png">
+				<p>咨询信息表</p>
+				<div class="btn-group">
+				    <div class="btn-group">
+				    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">年级
+				    <span class="caret"></span>
+				    </button>
+				    <ul class="dropdown-menu">
+				        <li><a href="#">一年级</a></li>
+				        <li><a href="#">二年级</a></li>
+				        <li><a href="#">三年级</a></li>
+				        <li><a href="#">四年级</a></li>
+				    </ul>
+				    </div>
+				    <div class="btn-group">
+				    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">班级
+				     <span class="caret"></span>
+				    </button>
+				    <ul class="dropdown-menu">
+				        <li><a href="#">一班</a></li>
+				        <li><a href="#">二班</a></li>
+				    </ul>
+				    </div>
+				</div>
+				<input type="text" class="form-control" id="name" placeholder="姓名">
+				<a id='createBtn' class='btn btn-default btn-insight' tabindex='0'><span>建立咨询档案</span></a>
+			</div>
+			<table id="appointTable" class="display">
+		    	<thead>
+            		<tr>
+            			<th><input type="checkbox" name="items"></th>
+		                <th>Id</th>
+		                <th>序号</th>
+		                <th>咨询学生</th>
+		                <th>咨询时间</th>
+		                <th>咨询类型</th>
+		                <th>问题描述</th>
+		                <th>解决问题</th>
+		                <th>咨询过程记录</th>
+		                <th>咨询师建议和总结</th>
+		                <th>操作</th>
+            		</tr>
+            	</thead>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

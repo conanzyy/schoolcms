@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-4.0.xsd
+http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+http://www.springframework.org/schema/task
+http://www.springframework.org/schema/aop/spring-task-4.0.xsd
+ ">
+
+	<bean id="CmsBeanFactory" class="com.cuckoo.cms.common.CmsBeanFactory"></bean>
+	<context:component-scan base-package="com.cuckoo.cms" />
+
+	<mvc:annotation-driven />
+	<mvc:resources mapping="/univ/**" location="/univ/"/>
+	<context:annotation-config />
+	<aop:aspectj-autoproxy />
+	<bean id="configProperties"
+		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="locations">
+			<list>
+				<value>classpath:prop/mysql.properties</value>
+				<value>classpath:prop/cms.properties</value>
+			</list>
+		</property>
+
+		<property name="fileEncoding" value="UTF-8"></property>
+	</bean>
+
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
+		<property name="properties" ref="configProperties" />
+
+	</bean>
+
+   <bean id="multipartResolver"  class="org.springframework.web.multipart.commons.CommonsMultipartResolver"> 
+            <property name="maxUploadSize" value="2048000000"/> 
+            <property name="resolveLazily" value="true"/> 
+            <property name="maxInMemorySize" value="4096"/> 
+            <property name="defaultEncoding" value="UTF-8"/> 
+        </bean> 
+
+
+	<import resource="classpath:spring/mysql-config.xml" />
+    <bean
+        class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass"
+            value="org.springframework.web.servlet.view.JstlView" />
+        <property name="prefix" value="/univ/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+
+    <bean id="redirectLoginModeAndView" scope="prototype" lazy-init="true"
+        class="org.springframework.web.servlet.ModelAndView">
+        <property name="viewName" value="jsp/login" />
+    </bean>
+    <bean id="redirectLoginController" scope="singleton" lazy-init="true" class="com.cuckoo.cms.common.user.controller.RedirectLoginController">
+     <lookup-method  name="getRedirectLoginModelAndView" bean="redirectLoginModeAndView"/>
+    </bean>
+</beans>

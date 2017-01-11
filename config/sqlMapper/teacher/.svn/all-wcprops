@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/01-design/!svn/ver/558/code/cms/config/sqlMapper/teacher
+END
+TeaLeaveMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/01-design/!svn/ver/547/code/cms/config/sqlMapper/teacher/TeaLeaveMapper.xml
+END
+TeaGrantMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/01-design/!svn/ver/600/code/cms/config/sqlMapper/teacher/TeaGrantMapper.xml
+END
+TeaJobMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/01-design/!svn/ver/599/code/cms/config/sqlMapper/teacher/TeaJobMapper.xml
+END
+TeaStuScoreMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/01-design/!svn/ver/432/code/cms/config/sqlMapper/teacher/TeaStuScoreMapper.xml
+END
+OrderMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/01-design/!svn/ver/551/code/cms/config/sqlMapper/teacher/OrderMapper.xml
+END
+TPracticeMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/01-design/!svn/ver/270/code/cms/config/sqlMapper/teacher/TPracticeMapper.xml
+END
+OrderRecordMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/01-design/!svn/ver/470/code/cms/config/sqlMapper/teacher/OrderRecordMapper.xml
+END
+TNoticeManagerMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/01-design/!svn/ver/183/code/cms/config/sqlMapper/teacher/TNoticeManagerMapper.xml
+END
+TeaStudentManagerMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/01-design/!svn/ver/599/code/cms/config/sqlMapper/teacher/TeaStudentManagerMapper.xml
+END
+TeaGrantApplyMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/01-design/!svn/ver/495/code/cms/config/sqlMapper/teacher/TeaGrantApplyMapper.xml
+END
+MentalHealthMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/01-design/!svn/ver/599/code/cms/config/sqlMapper/teacher/MentalHealthMapper.xml
+END
+OrderScheduleMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/01-design/!svn/ver/586/code/cms/config/sqlMapper/teacher/OrderScheduleMapper.xml
+END

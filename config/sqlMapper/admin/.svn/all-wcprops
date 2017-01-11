@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/01-design/!svn/ver/514/code/cms/config/sqlMapper/admin
+END
+RoleManagerMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/01-design/!svn/ver/48/code/cms/config/sqlMapper/admin/RoleManagerMapper.xml
+END
+CounselorMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/01-design/!svn/ver/586/code/cms/config/sqlMapper/admin/CounselorMapper.xml
+END

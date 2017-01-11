@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cuckoo.cms.admin.dao.IRoleManagerDao">
+	<resultMap id="roleResultMap" type="com.cuckoo.cms.common.user.pojo.Role">
+		<id column="roleId" property="roleId" jdbcType="VARCHAR" />
+		<result column="roleName" property="roleName" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="VARCHAR" />
+		<result column="createTime" property="createTime" jdbcType="VARCHAR" />
+		<result column="createBy" property="createBy" jdbcType="VARCHAR" />
+		 <result column="tenantId" property="tenantId" jdbcType="VARCHAR" />
+	</resultMap>
+	<select id="getRoleList" parameterType="string" resultMap="roleResultMap">
+<![CDATA[
+select tr.roleId,tr.roleName,tr.status,tr.createTime,tu.userName as createBy,tr.tenantId  from t_roles tr
+ left join t_user tu on tu.userId =tr.createBy
+ where tr.tenantId=#{tenantId} and tr.status='0' and tu.status='0'
+
+ ]]>
+	</select>
+
+	<insert id="createRole" parameterType="com.cuckoo.cms.common.user.pojo.Role" useGeneratedKeys="true" keyProperty="roleId" >
+<![CDATA[
+insert into t_roles(roleName,createBy,tenantId) values(#{roleName},#{createBy},#{tenantId})
+ ]]>
+	
+	</insert>
+
+
+	<insert id="createRoleAuthList" parameterType="java.util.List">
+		insert into t_role_auth values
+		<foreach collection="authids" item="item" index="index"
+			separator=",">
+			( #{roleId}, #{item})
+		</foreach>
+
+	</insert>
+	
+	<update id="deleteRole">
+	<![CDATA[
+	update t_roles set status='1' where roleId=#{0} and tenantId=#{1} and status='0'
+	 ]]>
+	
+	</update>
+	
+	<update id="updateRole">
+	   <![CDATA[
+    update t_roles set roleName=#{1} where roleId=#{0} and tenantId=#{2} and status='0'
+     ]]>
+	</update>
+	<delete id="deleteRoleAuth" parameterType="String">
+	   <![CDATA[
+    delete from  t_role_auth where roleId=#{roleId}
+     ]]>
+	
+	</delete>
+	
+	<select id="getRoleInfo" resultMap="roleResultMap">
+	
+	select tr.roleId,tr.roleName,tr.status,tr.createTime,tu.userName as createBy,tr.tenantId  from t_roles tr
+	left join t_user tu on tu.userId =tr.createBy
+	where tr.tenantId=#{tenantId} and tr.roleId=#{roleId} and tr.status='0' and tu.status='0'
+	
+	</select>
+	
+</mapper> 

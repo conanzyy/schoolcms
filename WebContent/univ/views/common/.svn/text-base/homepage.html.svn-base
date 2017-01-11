@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学生信息管理系统</title>
+<!-- thirdparty css -->
+<link rel="stylesheet" href="../../thirdparty/bootstrap-3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/jsTree-3.3.3/dist/themes/default/style.min.css">
+<!-- personal css -->
+<link rel="stylesheet" href="../../css/index.css">
+<link rel="stylesheet" href="../../css/first.css">
+<!-- thirdparty js -->
+<script src="../../thirdparty/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script src="../../thirdparty/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../../js/common/homepage.js"></script>
+</head>
+<body>
+	<div class="top">
+        <div class="col-md-8 col-sm-8 col-xs-12 fl ovfh hg100">
+            <div class="top_box col-md-12 col-sm-12 col-xs-12 hg50 pdb5 bgcfff">
+                <div class="top_box_header">
+                    <div class="title col-md-3 col-sm-3 col-xs-3 line">
+                        <img src="../../images/tz.png" alt=""/>&nbsp;
+                        <span>公告通知</span>
+                    </div>
+                    <div class="more col-md-9 col-sm-9 col-xs-9 lines">
+                        <span>更多 >>></span>
+                    </div>
+                </div>
+                <div class="top_box_content content">
+                    <ul id="noticeUL">
+                     <!--   <a href="#"><li>
+                            <span class="col-md-9 col-sm-9 col-xs-9 first_li">关于通过2016年医师资格考试的七年制学.. </span>
+                            <em class="col-md-3 col-sm-3 col-xs-3 ">2016-10-10</em>
+                        </li></a>
+                        <a href=""><li>
+                            <span class="col-md-9 col-sm-9 col-xs-9 ">关于做好2017年暑期江苏大学生赴海外文..</span>
+                            <em class="col-md-3 col-sm-3 col-xs-3 ">2016-10-10</em>
+                        </li></a>
+                        <a href=""><li>
+                            <span class="col-md-9 col-sm-9 col-xs-9 ">关于重申考风考纪，做好期末考试工作的通知.. </span>
+                            <em class="col-md-3 col-sm-3 col-xs-3 ">2016-10-10</em>
+                        </li></a>
+                        <a href=""><li>
+                            <span class="col-md-9 col-sm-9 col-xs-9 ">2016-2017学年第二学期第一次停开..</span>
+                            <em class="col-md-3 col-sm-3 col-xs-3 ">2016-10-10</em>
+                        </li></a>
+                        <a href=""><li>
+                            <span class="col-md-9 col-sm-9 col-xs-9 ">关于公布我校2016年重点教材立项建设名..</span>
+                            <em class="col-md-3 col-sm-3 col-xs-3 ">2016-10-10</em>
+                        </li></a>
+                        <a href=""><li>
+                            <span class="col-md-9 col-sm-9 col-xs-9 ">关于部分班级考试无人监考的公告..</span>
+                            <em class="col-md-3 col-sm-3 col-xs-3 ">2016-10-10</em>
+                        </li></a> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="top_box col-md-12 col-sm-12 col-xs-12 hg48 pd0 mgt2">
+                <div class="col-md-4 col-sm-4 col-xs-4 top_box_sm hg100 pdr5">
+                    <div class="bgcfff hg100 pdlr15">
+                        <div class="top_box_sm_header">
+                            <div class="title col-md-7 col-sm-7 col-xs-7 line">
+                                <img src="../../images/kj.png" alt=""/>
+                                <span>学生基础信息</span>
+                            </div>
+                            <div class="more col-md-5 col-sm-5 col-xs-5 lines">
+                                <span>>></span>
+                            </div>
+                        </div>
+                        <div class="top_box_sm_content">
+                            <ul>
+                                <a href="../teacher/practice.html"><li>
+                                    <span class="col-md-12 col-sm-12 col-xs-12 ">实习信息</span>
+                                </li></a>
+                                <a href="../teacher/mentalhealth.html"><li>
+                                    <span class="col-md-12 col-sm-12 col-xs-12 ">心理健康信息</span>
+                                </li></a>
+                                <a href="../teacher/studentInfo.html"><li>
+                                    <span class="col-md-12 col-sm-12 col-xs-12 ">个人信息</span>
+                                </li></a>
+                                <a href="../teacher/schoolRecord.html"><li>
+                                    <span class="col-md-12 col-sm-12 col-xs-12 ">学习成绩</span>
+                                </li></a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4 top_box_sm hg100 pdr5">
+                    <div class="bgcfff hg100 pdlr15">
+                        <div class="top_box_sm_header">
+                            <div class="title col-md-7 col-sm-7 col-xs-7 line">
+                                <img src="../../images/kj.png" alt=""/>
+                                <span>发起管理</span>
+                            </div>
+                            <div class="more col-md-5 col-sm-5 col-xs-5 lines">
+                                <span>>></span>
+                            </div>
+                        </div>
+                        <div class="top_box_sm_content">
+                            <ul>
+                                <a href="../teacher/leaveMg.html"><li>
+                                    <span class="col-md-12 col-sm-12 col-xs-12 ">请假管理</span>
+                                </li></a>
+                                <a href="../teacher/grantMgr.html"><li>
+                                    <span class="col-md-12 col-sm-12 col-xs-12 ">奖助管理</span>
+                                </li></a>
+                                <a href="#"><li>
+                                    <span class="col-md-12 col-sm-12 col-xs-12 ">项目管理</span>
+                                </li></a>
+                                <a href="#"><li>
+                                    <span class="col-md-12 col-sm-12 col-xs-12 ">活动管理</span>
+                                </li></a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4 top_box_sm hg100 pdr5">
+                    <div class="bgcfff hg100 pdlr15">
+                        <div class="top_box_sm_header">
+                            <div class="title col-md-7 col-sm-7 col-xs-7 line">
+                                <img src="../../images/kj.png" alt=""/>
+                                <span>咨询管理</span>
+                            </div>
+                            <div class="more col-md-5 col-sm-5 col-xs-5 lines">
+                                <span>>></span>
+                            </div>
+                        </div>
+                        <div class="top_box_sm_content">
+                            <ul>
+                                <a href="../teacher/scheduleMgr.html"><li>
+                                    <span class="col-md-12 col-sm-12 col-xs-12 ">档期管理</span>
+                                </li></a>
+                                <a href="../teacher/myAppoint.html"><li>
+                                    <span class="col-md-12 col-sm-12 col-xs-12 ">我的预约</span>
+                                </li></a>
+                                <a href="../teacher/adviserMgr.html"><li>
+                                    <span class="col-md-12 col-sm-12 col-xs-12 ">咨询师管理</span>
+                                </li></a>
+                                <a href="../teacher/talkMg.html"><li>
+                                    <span class="col-md-12 col-sm-12 col-xs-12 ">约谈管理</span>
+                                </li></a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top_box col-md-4 col-sm-4 col-xs-12 fl hg100 bgcfff">
+            <div class="top_box_header" style="height: 7%;">
+                <div class="title col-md-5 col-sm-5 col-xs-5 line line_db">
+                    <img src="../../images/waitcl.png" alt=""/>
+                    <span>待办事项</span>
+                </div>
+                <div class="more col-md-7 col-sm-7 col-xs-7 lines">
+                    <span>更多 >>></span>
+                </div>
+            </div>
+            <div class="top_box_content">
+                    <ul>
+                        <a href=""><li>
+                            <span class="col-md-8 col-sm-8 col-xs-8">请假审批</span>
+                            <em class="col-md-4 col-sm-4 col-xs-4 red">(1)</em>
+                        </li></a>
+                        <a href=""><li>
+                            <span class="col-md-8 col-sm-8 col-xs-8 ">项目审核</span>
+                            <em class="col-md-4 col-sm-4 col-xs-4 red">(5)</em>
+                        </li></a>
+                        <a href=""><li>
+                            <span class="col-md-8 col-sm-8 col-xs-8 ">奖助审核</span>
+                            <em class="col-md-4 col-sm-4 col-xs-4 red">(4)</em>
+                        </li></a>
+                        <a href=""><li>
+                            <span class="col-md-8 col-sm-8 col-xs-8 ">咨询师预约</span>
+                            <em class="col-md-4 col-sm-4 col-xs-4 red">(2)</em>
+                        </li></a>
+                        <a href=""><li>
+                            <span class="col-md-8 col-sm-8 col-xs-8 ">学校通知</span>
+                            <em class="col-md-4 col-sm-4 col-xs-4 red">(1)</em>
+                        </li></a>
+                        <a href=""><li>
+                            <span class="col-md-8 col-sm-8 col-xs-8 ">新生入学</span>
+                            <em class="col-md-4 col-sm-4 col-xs-4 red">(7)</em>
+                        </li></a>
+                        <a href=""><li>
+                            <span class="col-md-8 col-sm-8 col-xs-8 ">学生录入</span>
+                            <em class="col-md-4 col-sm-4 col-xs-4 red">(2)</em>
+                        </li></a>
+                        <a href=""><li>
+                            <span class="col-md-8 col-sm-8 col-xs-8 ">成绩录入</span>
+                            <em class="col-md-4 col-sm-4 col-xs-4 red">(1)</em>
+                        </li></a>
+                        <a href=""><li>
+                            <span class="col-md-8 col-sm-8 col-xs-8 ">放假通知</span>
+                            <em class="col-md-4 col-sm-4 col-xs-4 red">(9)</em>
+                        </li></a>
+                        <a href=""><li>
+                            <span class="col-md-8 col-sm-8 col-xs-8 ">预约管理</span>
+                            <em class="col-md-4 col-sm-4 col-xs-4 red">(1)</em>
+                        </li></a>
+                        <a href=""><li>
+                            <span class="col-md-8 col-sm-8 col-xs-8 ">档期管理</span>
+                            <em class="col-md-4 col-sm-4 col-xs-4 red">(1)</em>
+                        </li></a>
+                        <a href=""><li>
+                            <span class="col-md-8 col-sm-8 col-xs-8 ">就业信息</span>
+                            <em class="col-md-4 col-sm-4 col-xs-4 red">(0)</em>
+                        </li></a>
+                    </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

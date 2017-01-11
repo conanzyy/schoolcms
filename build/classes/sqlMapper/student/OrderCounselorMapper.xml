@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cuckoo.cms.student.dao.IOrderCounselorDao">
+<resultMap id="myOrderResultMap" type="com.cuckoo.cms.student.pojo.MyOrderInfo">
+        <id column="scheduleId" property="scheduleId" jdbcType="VARCHAR" />
+        <result column="startTime" property="startTime" jdbcType="VARCHAR" />
+        <result column="endTime" property="endTime" jdbcType="VARCHAR" />
+        <result column="place" property="place" jdbcType="VARCHAR" />
+    </resultMap>
+	
+	<select id="getMyOrderList" parameterType="string" resultMap="myOrderResultMap">
+
+select tos.scheduleId,tos.startTime,tos.place,tos.counselorId from t_order_schedule tos
+where tos.status='0' and tos.counselorId=#{counselorId}
+	</select>
+ <insert id="orderCounselorSchedule" >
+ <![CDATA[
+ insert into t_order(userId,scheduleId) values(#{userId},#{scheduleId})
+  ]]>
+ </insert>
+ 
+</mapper> 

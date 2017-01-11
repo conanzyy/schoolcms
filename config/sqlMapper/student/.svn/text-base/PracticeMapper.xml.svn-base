@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cuckoo.cms.student.dao.IPracticeDao">
+	<resultMap id="practiceResultMap" type="com.cuckoo.cms.student.pojo.Practice">
+		<id column="practiceId" property="practiceId" jdbcType="VARCHAR" />
+		<result column="userId" property="userId" jdbcType="VARCHAR" />
+		<result column="emType" property="emType" jdbcType="VARCHAR" />
+		<result column="workCompany" property="workCompany" jdbcType="VARCHAR" />
+		<result column="companyNature" property="companyNature" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="VARCHAR" />
+		<result column="workPhone" property="workPhone" jdbcType="VARCHAR" />
+		<result column="superName" property="superName" jdbcType="VARCHAR" />
+		<result column="workAddress" property="workAddress" jdbcType="VARCHAR" />
+		<result column="superPhone" property="superPhone" jdbcType="VARCHAR" />
+		<result column="practiceRecord" property="practiceRecord" jdbcType="VARCHAR" />
+		<result column="practiceDetail" property="practiceDetail" jdbcType="VARCHAR" />
+	</resultMap>
+	<select id="getPracticeList" parameterType="string" resultMap="practiceResultMap">
+<![CDATA[
+select tp.superPhone,tp.practiceRecord,tp.workPhone,tp.superName,tp.workAddress,tp.practiceId,tp.userId,tp.emType,tp.workCompany,tp.companyNature,tp.status from t_practice tp
+ left join t_user tu on tu.userId =tp.userId
+ where tp.userId=#{userId} and tp.status='0' and tu.status='0'
+order by tp.practiceId ASC
+ ]]>
+	</select>
+
+ 	<insert id="createPractice" parameterType="com.cuckoo.cms.student.pojo.Practice" useGeneratedKeys="true" keyProperty="practiceId" >
+<![CDATA[
+insert into t_practice(emType,workCompany,companyNature,workPhone,superName,workAddress,
+superPhone,practiceRecord,userId) values(#{emType},#{workCompany},#{companyNature},#{workPhone},#{superName},#{workAddress},
+#{superPhone},#{practiceRecord},#{userId}) 
+ ]]>
+	
+	</insert>
+	
+
+	<update id="updatePractice">
+<![CDATA[
+    update t_practice set emType=#{1},workCompany=#{2},companyNature=#{3},workPhone=#{4},
+			superName=#{5},workAddress=#{6},superPhone=#{7},practiceRecord=#{8} where practiceId=#{0} and userId=#{9} and status='0'
+     ]]>
+	</update>
+	
+<select id="getPracticeInfo" resultMap="practiceResultMap">
+	<![CDATA[
+	select tp.emType,tp.workCompany,tp.companyNature,tp.workPhone,tp.superName,tp.superPhone,tp.workAddress,tp.practiceRecord,tp.practiceId,tp.userId
+ from t_practice tp left join t_user tu on tu.userId =tp.userId
+ where tp.userId=#{userId} and tp.practiceId=#{practiceId} and tp.status='0' and tu.status='0'
+	]]>
+	</select>
+	
+</mapper> 

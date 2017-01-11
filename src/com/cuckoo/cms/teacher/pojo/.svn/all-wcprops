@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/01-design/!svn/ver/556/code/cms/src/com/cuckoo/cms/teacher/pojo
+END
+TPractice.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/01-design/!svn/ver/242/code/cms/src/com/cuckoo/cms/teacher/pojo/TPractice.java
+END
+TeaStuScore.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/01-design/!svn/ver/434/code/cms/src/com/cuckoo/cms/teacher/pojo/TeaStuScore.java
+END
+TNotice.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/01-design/!svn/ver/147/code/cms/src/com/cuckoo/cms/teacher/pojo/TNotice.java
+END
+TeaGrant.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/01-design/!svn/ver/492/code/cms/src/com/cuckoo/cms/teacher/pojo/TeaGrant.java
+END
+TeaStudent.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/01-design/!svn/ver/304/code/cms/src/com/cuckoo/cms/teacher/pojo/TeaStudent.java
+END
+TeaLeave.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/01-design/!svn/ver/512/code/cms/src/com/cuckoo/cms/teacher/pojo/TeaLeave.java
+END
+MentalHealth.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/01-design/!svn/ver/599/code/cms/src/com/cuckoo/cms/teacher/pojo/MentalHealth.java
+END
+OrderSchedule.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/01-design/!svn/ver/551/code/cms/src/com/cuckoo/cms/teacher/pojo/OrderSchedule.java
+END
+TeaGrantApply.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/01-design/!svn/ver/493/code/cms/src/com/cuckoo/cms/teacher/pojo/TeaGrantApply.java
+END
+OrderRecord.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/01-design/!svn/ver/444/code/cms/src/com/cuckoo/cms/teacher/pojo/OrderRecord.java
+END
+Job.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/01-design/!svn/ver/599/code/cms/src/com/cuckoo/cms/teacher/pojo/Job.java
+END
+Grant.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/01-design/!svn/ver/105/code/cms/src/com/cuckoo/cms/teacher/pojo/Grant.java
+END
+OrderInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/01-design/!svn/ver/551/code/cms/src/com/cuckoo/cms/teacher/pojo/OrderInfo.java
+END
+TeaIndexGrant.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/01-design/!svn/ver/543/code/cms/src/com/cuckoo/cms/teacher/pojo/TeaIndexGrant.java
+END
+TeaIndexLeave.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/01-design/!svn/ver/544/code/cms/src/com/cuckoo/cms/teacher/pojo/TeaIndexLeave.java
+END

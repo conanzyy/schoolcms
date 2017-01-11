@@ -1,0 +1,5 @@
+reserved.xss.script.words=<script,</script,<iframe,</iframe,<frame,</frame,set-cookie,%3c/iframe,%3ciframe,%3cframe,%3c/frame,src=\javascript:,javascript:,vbscriptt:,<body,</body,%3cbody,%3c/body,alert(,prompt(,<marquee,</marquee
+url.auth.resource.whiteList=^(/|/loginCheck|/univ/.*)$
+
+counselor.image.dir=
+counselor.image.url=http://localhost:8080/cms/data/

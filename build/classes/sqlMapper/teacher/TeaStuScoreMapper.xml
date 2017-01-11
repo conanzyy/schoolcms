@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <mapper namespace="com.cuckoo.cms.teacher.dao.TeaStuScoreDao">
+    	<resultMap id="teaStuScoreResultMap" type="com.cuckoo.cms.teacher.pojo.TeaStuScore">
+		<id column="scoreId" property="scoreId" jdbcType="VARCHAR" ></id>
+		<result column="userId" property="userId" jdbcType="VARCHAR" />
+		<result column="courseId" property="courseId" jdbcType="VARCHAR" />
+		<result column="score" property="score" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="VARCHAR" />
+		</resultMap>
+		
+		<!-- 获取学生成绩列表 -->
+		<select id="getTeaStuScoreList" parameterType="string" resultMap="teaStuScoreResultMap">
+			<![CDATA[
+				select ts.userId,ts.stuName,ts.stuNum,tp.proName,tc.courseId,tc.courseName,
+						tsc.score,tsc.scoreId,tc.credit,tc.courseType,tt.teaName,tc.semester 
+					from t_score tsc 
+					left join t_student ts 
+						on ts.userId = tsc.userId AND ts.status='0' 
+					left join t_profession tp 
+						on tp.proId = ts.proId 
+					left join t_stu_course tsce 
+						on tsce.userId =ts.userId 
+					left join t_course tc 
+						on tc.courseId = tsce.courseId 
+					left join t_teaching tte 
+						on tte.courseId = tc.courseId 
+					left join t_teacher tt 
+						on tt.userId = tte.userId AND tt.userId=#{0} AND tt.status='0'
+					left join t_user tu 
+						on tu.userId = tt.userId AND tu.tenantId=#{1} AND tu.status='0'
+						where tsc.status='0'
+			]]>
+		</select>
+		
+		<!-- 获取学生成绩详情 -->
+		<select id="getTeaStuScoreInfo" resultMap="teaStuScoreResultMap">
+			<![CDATA[
+				select ts.userId,ts.stuName,ts.stuNum,tp.proName,tc.courseId,tc.courseName,
+						tsc.score,tsc.scoreId,tc.credit,tc.courseType,tt.teaName,tc.semester 
+					from t_score tsc 
+					left join t_student ts 
+						on ts.userId = tsc.userId AND ts.status='0' 
+					left join t_profession tp 
+						on tp.proId = ts.proId 
+					left join t_stu_course tsce 
+						on tsce.userId =ts.userId 
+					left join t_course tc 
+						on tc.courseId = tsce.courseId 
+					left join t_teaching tte 
+						on tte.courseId = tc.courseId 
+					left join t_teacher tt 
+						on tt.userId = tte.userId AND tt.status='0'
+					left join t_user tu 
+						on tu.userId = tt.userId AND tu.status='0'
+						where tsc.status='0' 
+							AND tsc.scoreId=#{scoreId}
+			]]>
+		</select>
+		
+		<!-- 编辑学生成绩 -->
+		<update id="updateTeaStuScoreInfo">
+			<![CDATA[
+				update t_score set score=#{0} where scoreId=#{1}
+			]]>
+		</update>
+		
+		<!-- 删除学生成绩 -->
+		<update id="deleteTeaStuScoreInfo" parameterType="string">
+			<![CDATA[
+				update t_score set status='1' where scoreId=#{scoreId}
+			]]>
+		</update>
+		
+		
+		
+		</mapper>

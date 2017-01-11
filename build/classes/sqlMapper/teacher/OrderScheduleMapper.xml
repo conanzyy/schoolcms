@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cuckoo.cms.teacher.dao.IOrderScheduleDao">
+	<resultMap id="orderScheduleResultMap" type="com.cuckoo.cms.teacher.pojo.OrderSchedule">
+		<id column="scheduleId" property="scheduleId" jdbcType="VARCHAR" />
+		<result column="consultingArea" property="consultingArea" jdbcType="VARCHAR" />
+		<result column="startTime" property="startTime" jdbcType="VARCHAR" />
+		<result column="endTime" property="endTime" jdbcType="VARCHAR" />
+		<result column="place" property="place" jdbcType="VARCHAR" />
+		<result column="counselorId" property="counselorId" jdbcType="VARCHAR" />
+		<result column="teaName" property="teaName" jdbcType="VARCHAR" />
+		<result column="stuName" property="stuName" jdbcType="VARCHAR" />
+		 <result column="status" property="status" jdbcType="VARCHAR" />
+		  <result column="description" property="problemDesc" jdbcType="VARCHAR" />
+		   <result column="cancleRemark" property="cancleRemark" jdbcType="VARCHAR" />
+		 <result column="consultTime" property="consultTime" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<select id="getOrderScheduleList" parameterType="com.cuckoo.cms.common.user.pojo.User" resultMap="orderScheduleResultMap">
+
+select tos.scheduleId,tc.consultingArea ,tos.startTime,ts.stuName, tos.endTime,tos.place,tos.counselorId,tt.teaName,tos.status,tr.description,tos.cancleRemark,tr.consultTime from t_order_schedule tos
+ inner join t_counselor tc on tc.counselorId=tos.counselorId
+  inner join t_teacher tt on tt.userId =tc.userId
+  left join t_order tr on tr.scheduleId=tos.scheduleId and tr.status='0'
+  left join t_student ts on ts.userId=tr.userId and ts.status='0'
+ where tc.tenantId=#{tenantId} and tc.status='0' and tt.status='0'  and tos.isOrder='0'
+ <if test="isSys !='1'">
+    and tc.userId=#{userId}
+ </if>
+ 
+	</select>
+ <insert id="createOrderSchedule" parameterType="com.cuckoo.cms.teacher.pojo.OrderSchedule">
+ <![CDATA[
+ insert into t_order_schedule(startTime,endTime,place,counselorId) values(#{startTime},#{endTime},#{place},#{counselorId})
+  ]]>
+ </insert>
+<select id="getCounselorIdByUserId" parameterType="String" resultType="String">
+select counselorId  from t_counselor where userId=#{userId} and status='0'
+
+</select>
+ 
+ <update id="cancleOrderSchedule" >
+ 
+ update t_order_schedule  set status='1',cancleRemark=#{cancleRemark} where status='0' scheduleId=#{scheduleId}
+ 
+ </update>
+ <select id="getOrderUser" parameterType="String" resultType="String">
+ 
+ select userId from t_order where scheduleId=#{scheduleId}
+ 
+ </select>
+ 
+ <insert id="insertNomalToOrder">
+ insert into t_order_schedule(startTime,endTime,place,counselorId,cancleRemark ,isOrder) select startTime,endTime,place,counselorId,cancleRemark,"1" as isOrder from t_order_schedule where scheduleId=#{scheduleId} and status='0'
+ 
+ </insert>
+ 
+ <update id="updateOrderSchedule" parameterType="com.cuckoo.cms.teacher.pojo.OrderSchedule">
+ update t_order_schedule tos set tos.startTime=#{startTime},tos.endTime=#{endTime},tos.place=#{place},tos.cancleRemark=#{cancleRemark}
+ where tos.scheduleId=#{scheduleId} and tos.status='0'
+ 
+ </update>
+</mapper> 

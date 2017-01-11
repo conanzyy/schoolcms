@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学生信息管理系统</title>
+<!-- thirdparty css -->
+<link rel="stylesheet" href="../../thirdparty/bootstrap-3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/jsTree-3.3.3/dist/themes/default/style.min.css">
+<!-- personal js -->
+<link rel="stylesheet" href="../../css/index.css">
+<link rel="stylesheet" href="../../css/studentInfo.css">
+<!-- thirdparty js -->
+<script src="../../thirdparty/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script src="../../thirdparty/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../../thirdparty/jsTree-3.3.3/dist/jstree.min.js"></script>
+<!-- personal js -->
+<script src="../../js/student/layer.js"></script>
+<script src="../../js/student/studentInfo.js"></script>
+</head>
+<body>
+	<div class="container top">
+        <div class="top-box">
+            <div class="top-box-head">
+                <span>个人信息</span>
+            </div>
+            <div class="top-box-body">
+            <form id="studentform">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th colspan="8">个人信息资料</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="table-col1">
+                                <label for="name">姓名</label>
+                            </td>
+                            <td>
+                                <input type="text" id="name" name="stuName" required/>
+                            </td>
+                            <td>
+                                <label for="gender">性别</label>
+                            </td>
+                            <td>
+                                <div id="gender">
+                                    <input type="radio" name="sex" value="1" id="man" disabled/>&nbsp;男
+                                    <input type="radio" name="sex" value="2" id= "women" disabled/>&nbsp;女
+                                </div>
+                            </td>
+                            <td>
+                                <label for="nation">民族</label>
+                            </td>
+                            <td>
+                                <input type="text" id="nation" name="national" readonly/>
+                            </td>
+                            <td>
+                                <label for="birth">出生年月</label>
+                            </td>
+                            <td>
+                                <input type="date" id="birth"  name="dateBirth" readonly/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="in-school">入学时间</label>
+                            </td>
+                            <td>
+                                <input type="date" id="in-school" value="" name="enterTime" readonly/>
+                            </td>
+                            <td>
+                                <label for="stu-type">生源类型</label>
+                            </td>
+                            <td>
+                                <div id="stu-type">
+                                    <input type="radio" id='city' name="studentType" value="1" disabled/>&nbsp;城市
+                                    <input type="radio" id='rural' name="studentType" value="2" disabled/>&nbsp;农村
+                                </div>
+                            </td>
+                            <td>
+                                <label for="is-only">是否独生子女</label>
+                            </td>
+                            <td>
+                                <div id="is-only">
+                                    <input type="radio" id='oneChildrenYse' name="oneChild" value="1" disabled/>&nbsp;是
+                                    <input type="radio" id='oneChildrenNo' name="oneChild" value="2" disabled/>&nbsp;否
+                                </div>
+                            </td>
+                            <td>
+                                <label for="is-medical">是否参加医保</label>
+                            </td>
+                            <td>
+                                <div id="is-medical">
+                                    <input type="radio" id='medicalYse' name="medical" value="1" disabled/>&nbsp;是
+                                    <input type="radio" id='medicalNo' name="medical" value="2" disabled/>&nbsp;否
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="address">家庭住址</label>
+                            </td>
+                            <td colspan="3">
+                                <input type="text" id="address" name="address" required/>
+                            </td>
+                            <td>
+                                <label for="phone">联系电话</label>
+                            </td>
+                            <td colspan="3">
+                                <input type="tel" id="phone" name="phone" required/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">家庭成员及主要社会关系</td>
+                            <td>姓名</td>
+                            <td>性别</td>
+                            <td>与本人关系</td>
+                            <td>联系地址</td>
+                            <td>邮编</td>
+                            <td>联系电话</td>
+                            <td>婚姻状况</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" id='familyName1' name="familyName1"  required/></td>
+                            <td><input type="text" id='familySex1' name="familySex1" required/></td>
+                            <td><input type="text" id='familyRelation1' name="familyRelation1" required/></td>
+                            <td><input type="text" id='familyAddress1' name="familyAddress1" required/></td>
+                            <td><input type="text" id='familyZipCode1' name="familyZipCode1" /></td>
+                            <td><input type="text" id='familyPhone1' name="familyPhone1"  required/></td>
+                            <td><input type="text" id='familyMarriage1' name="familyMarriage1"/></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" id='familyName2' name="familyName2"/></td>
+                            <td><input type="text" id='familySex2' name="familySex2"/></td>
+                            <td><input type="text" id='familyRelation2' name="familyRelation2"/></td>
+                            <td><input type="text" id='familyAddress2' name="familyAddress2"/></td>
+                            <td><input type="text" id='familyZipCode2' name="familyZipCode2"/></td>
+                            <td><input type="text" id='familyPhone2' name="familyPhone2"/></td>
+                            <td><input type="text" id='familyMarriage2' name="familyMarriage2"/></td>
+                        </tr>
+                        <tr>
+                            <td>获奖信息</td>
+                            <td colspan="7">
+                                <textarea id='prizeInfo' name="prizeInfo" cols="120" rows="3" required></textarea>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="btnBox">
+                    	<span>
+							<div id='change' class="btn fl" >保存</div>
+						</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

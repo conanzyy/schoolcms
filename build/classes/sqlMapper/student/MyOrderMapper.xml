@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cuckoo.cms.student.dao.IMyOrderDao">
+	<resultMap id="counselorResultMap" type="com.cuckoo.cms.admin.pojo.Counselor">
+		<id column="orderId" property="orderId" jdbcType="VARCHAR" />
+		<result column="consultingArea" property="consultingArea" jdbcType="VARCHAR" />
+		<result column="teaNum" property="teaNum" jdbcType="VARCHAR" />
+		<result column="teaName" property="teaName" jdbcType="VARCHAR" />
+		  <result column="image" property="image" jdbcType="VARCHAR" />
+		   <result column="status" property="status" jdbcType="VARCHAR" />
+		 <result column="orderTime" property="orderTime" jdbcType="VARCHAR" />
+		 <result column="createTime" property="createTime" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<select id="getCounselorList" parameterType="com.cuckoo.cms.common.user.pojo.User" resultMap="counselorResultMap">
+
+select to.orderId,tt.teaNum,tt.teaName,tc.consultingArea,tc.image ,to.status ,to.createTime,CONCAT(tos.startTime,tos.endTime)as orderTime from t_counselor tc
+ inner join t_user tu on tu.userId =tc.userId
+ inner join t_teacher tt on tt.userId=tc.userId
+ left join t_order_schedule on tos.counselorId=tc.counselorId
+ left join t_order on to.scheduleId=tos.scheduleId
+ where tu.tenantId=#{tenantId} and tc.status='0' and tu.status='0' and tos.status='0' and to.status='0'
+ and to.userId=#{userId}
+	</select>
+
+ <update id="cancleMyOrder" parameterType="com.cuckoo.cms.admin.pojo.Counselor">
+ update t_order to set to.status='1' where to.status='0' and to.isFinish='0' and to.userId=#{userId} and to.orderId=#{orderId}
+ </update>
+</mapper> 

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/01-design/!svn/ver/549/code/cms/src/com/cuckoo/cms/admin/service
+END
+RoleManagerService.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/01-design/!svn/ver/50/code/cms/src/com/cuckoo/cms/admin/service/RoleManagerService.java
+END
+CounselorService.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/01-design/!svn/ver/586/code/cms/src/com/cuckoo/cms/admin/service/CounselorService.java
+END
+Messages.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/01-design/!svn/ver/514/code/cms/src/com/cuckoo/cms/admin/service/Messages.java
+END
+messages.properties
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/01-design/!svn/ver/586/code/cms/src/com/cuckoo/cms/admin/service/messages.properties
+END

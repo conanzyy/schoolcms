@@ -1,0 +1,111 @@
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+}
+.top{
+    height: 100%;
+    width: 100%;
+    padding: 1.5625% 1.5625%;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+.top-box{
+    width: 100%;
+    height: 100%;
+    padding: 1.5625%;
+    background-color: #ffffff;
+}
+.top-box-head{
+    height: 7.96%;
+    width: 100%;
+    border-bottom: 1px solid #dddddd;
+}
+.top-box-head span{
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 2px;
+    font-weight: bold;
+    margin-bottom: 1.76%;
+    padding-left: 8px;
+    border-left: 4px solid #69baae;
+}
+.top-box-body{
+    width: 100%;
+    padding-top: 1.5625%;
+    /*padding-left: 1.5625%;*/
+}
+.top-box-body table,
+.top-box-body table th,
+.top-box-body table td{
+    border: 1px solid #dddddd;
+}
+.top-box-body table th,
+.top-box-body table td{
+    height: 40px;
+    line-height: 20px;
+    text-align: center;
+}
+.top-box-body table td.satisfaction{
+    text-align: left;
+    font-size: 15px;
+}
+.top-box-body table td.satisfaction input{
+    vertical-align: baseline;
+    margin-right: 5px;
+    margin-left: 15px;
+}
+.top-box-body table th{
+    font-size: 16px;
+    font-weight: bold;
+}
+.top-box-body table td label{
+    font-weight: normal;
+}
+.top-box-body table td input[type="text"],
+.top-box-body table td input[type="number"]{
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
+    padding-left: 10px;
+    width: 100%;
+}
+.top-box-body table td input::-webkit-input-placeholder { /* WebKit browsers */
+    color: #000;
+}
+.top-box-body table td input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #000;
+}
+.top-box-body table td input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #000;
+}
+.top-box-body table td input:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #000;
+}
+.top-box-body table td{
+    width: 12.5%;
+}
+.top-box-body table tr.tr-height{
+    height: 80px;
+    line-height: 80px;
+}
+.top-box-body table tr.tr-height td input[type="text"],
+.top-box-body table tr.tr-height td input[type="number"]{
+    height: 80px;
+    line-height: 80px;
+}
+.top-box-body button{
+    background-color: #69baae;
+    color: #ffffff;
+    margin: 20px 0 0 46.9%;
+}
+input,textarea{
+	border:none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+    margin: 0; 
+}
+input[type="number"]{-moz-appearance:textfield;}

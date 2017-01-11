@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/01-design/!svn/ver/48/code/cms/src/com/cuckoo/cms/common/user/pojo
+END
+User.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/01-design/!svn/ver/16/code/cms/src/com/cuckoo/cms/common/user/pojo/User.java
+END
+Role.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/01-design/!svn/ver/48/code/cms/src/com/cuckoo/cms/common/user/pojo/Role.java
+END
+Authority.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/01-design/!svn/ver/586/code/cms/src/com/cuckoo/cms/common/user/pojo/Authority.java
+END

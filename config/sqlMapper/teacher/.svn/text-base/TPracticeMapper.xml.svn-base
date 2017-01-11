@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cuckoo.cms.teacher.dao.ITPracticeDao">
+	<resultMap id="practiceResultMap" type="com.cuckoo.cms.teacher.pojo.TPractice">
+		<id column="practiceId" property="practiceId" jdbcType="VARCHAR" />
+		<result column="stuName" property="stuName" jdbcType="VARCHAR" />
+		<result column="stuNum" property="stuNum" jdbcType="VARCHAR" />
+		<result column="proName" property="proName" jdbcType="VARCHAR" />
+		<result column="className" property="className" jdbcType="VARCHAR" />
+		<result column="userId" property="userId" jdbcType="VARCHAR" />
+		<result column="emType" property="emType" jdbcType="VARCHAR" />
+		<result column="workCompany" property="workCompany" jdbcType="VARCHAR" />
+		<result column="companyNature" property="companyNature" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="VARCHAR" />
+		<result column="workPhone" property="workPhone" jdbcType="VARCHAR" />
+		<result column="superName" property="superName" jdbcType="VARCHAR" />
+		<result column="workAddress" property="workAddress" jdbcType="VARCHAR" />
+		<result column="superPhone" property="superPhone" jdbcType="VARCHAR" />
+		<result column="practiceRecord" property="practiceRecord" jdbcType="VARCHAR" />
+		<result column="practiceDetail" property="practiceDetail" jdbcType="VARCHAR" />
+	</resultMap>
+	<select id="getTPracticeList" parameterType="string" resultMap="practiceResultMap">
+<![CDATA[
+select ts.stuName,ts.stuNum,tc.className,tpf.proName,tp.superPhone,tp.practiceRecord,tp.workPhone,tp.superName,tp.workAddress,tp.practiceId,
+tp.userId,tp.emType,tp.workCompany,tp.companyNature,tp.status from t_practice tp
+ left join t_student ts on ts.userId = tp.userId and ts.status='0'
+ left join t_class tc on tc.classId =ts.classId 
+ left join t_profession tpf on tpf.proId = ts.proId
+ left join t_master_class tmc on tmc.classId = tc.classId
+  and tmc.userId=#{userId} 
+  where  tp.status = '0' 
+order by tp.practiceId ASC,tp.userId
+ ]]>
+	</select>
+	
+
+<update id="deleteTPractice" parameterType="String">
+	<![CDATA[
+	update t_practice set status='1' where practiceId=#{0}  and status='0'
+	 ]]>
+	</update>
+
+<select id="getTPracticeInfo" resultMap="practiceResultMap">
+	<![CDATA[
+	select ts.stuName,ts.stuNum,tc.className,tpf.proName,tp.superPhone,tp.practiceRecord,tp.workPhone,tp.superName,tp.workAddress,tp.practiceId,
+tp.userId,tp.emType,tp.workCompany,tp.companyNature,tp.status from t_practice tp
+ left join t_student ts on ts.userId = tp.userId and tp.status = '0' and ts.status='0' 
+ left join t_class tc on tc.classId =ts.classId 
+ left join t_profession tpf on tpf.proId = ts.proId
+ where tp.practiceId=#{practiceId} 
+
+	]]>
+	</select>
+</mapper> 

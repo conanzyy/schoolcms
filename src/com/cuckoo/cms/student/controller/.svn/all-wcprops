@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/01-design/!svn/ver/558/code/cms/src/com/cuckoo/cms/student/controller
+END
+StudentManagerController.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/01-design/!svn/ver/155/code/cms/src/com/cuckoo/cms/student/controller/StudentManagerController.java
+END
+MyOrderController.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/01-design/!svn/ver/558/code/cms/src/com/cuckoo/cms/student/controller/MyOrderController.java
+END
+PracticeController.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/01-design/!svn/ver/149/code/cms/src/com/cuckoo/cms/student/controller/PracticeController.java
+END
+OrderCounselorController.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/01-design/!svn/ver/558/code/cms/src/com/cuckoo/cms/student/controller/OrderCounselorController.java
+END
+LeaveManagerController.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/01-design/!svn/ver/354/code/cms/src/com/cuckoo/cms/student/controller/LeaveManagerController.java
+END
+NoticeManagerController.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/01-design/!svn/ver/602/code/cms/src/com/cuckoo/cms/student/controller/NoticeManagerController.java
+END

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学生信息管理系统</title>
+<!-- thirdparty css -->
+<link rel="stylesheet" href="../../thirdparty/bootstrap-3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/icheck-1.0/square/green.css">
+<link rel="stylesheet" href="../../thirdparty/layDate-1.0.0/skins/default/laydate.css">
+<link rel="stylesheet" href="../../thirdparty/layDate-1.0.0/need/laydate.css">
+<!-- personal js -->
+<link rel="stylesheet" href="../../css/index.css">
+<!-- thirdparty js -->
+<script src="../../thirdparty/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script src="../../thirdparty/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../../thirdparty/icheck-1.0/icheck.min.js"></script>
+<script src="../../thirdparty/layDate-1.0.0/laydate.dev.js"></script>
+<!-- personal js -->
+<script src="../../js/teacher/scheduleMgr.js"></script>
+<script src="../../js/utils/tablesStyleUtils.js"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row-fluid col-md-12 tableTop">
+			<p>档期管理</p>
+			<hr>
+			<div class="tableHead">
+				<img alt="" src="../../images/xinxibiao.png">
+				<p>档期安排表</p>
+				<a id='createSchleBtn' class='btn btn-default btn-insight' tabindex='0' onclick='addSchedule()'><span>添加档期</span></a>
+				<input type=text id=bgtime onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm'})">
+				<input type=text id=edtime onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm'})">
+			</div>
+			<table id="scheduleTable" class="display">
+		    	<thead>
+            		<tr>
+            			<th><input type="checkbox" name="items"></th>
+		                <th>Id</th>
+		                <th>序号</th>
+		                <th>咨询学生</th>
+		                <th>咨询老师</th>
+		                <th>咨询类型</th>
+		                <th>问题描述</th>
+		                <th>咨询时间</th>
+		                <th>是否取消</th>
+		                <th>取消事由</th>
+		                <th>操作</th>
+            		</tr>
+            	</thead>
+			</table>
+		</div>
+	</div>
+	<!-- 信息提示单选框 -->
+	<div class="modal fade" id="execAlert" tabindex="-1" role="dialog" aria-labelledby="execAlertLable" aria-hidden="true">
+    <div class="modal-dialog" style="width:350px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="execAlertLable">提示信息</h4>
+            </div>
+            <div class="modal-body">
+            	<ul class="radioList">
+            		<li>
+            			<input type="radio" name="cancel" checked>
+            			<label for="square-radio-1">转成约谈</label>
+            		</li>
+            		<li>
+            			<input type="radio" name="cancel">
+						<label for="square-radio-2">直接取消</label>
+            		</li>
+            	</ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="submitBtn()">确认</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+	</div>
+	<!-- 添加档期 -->
+	<div class="modal fade" id="schedulePanel" tabindex="-1" role="dialog" aria-labelledby="schedulePanelLable" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="schedulePanelLable">添加档期</h4>
+            </div>
+            <div class="modal-body">
+               <form class="form-horizontal" role="form">
+				  <div class="form-group">
+				    <label for="addBgTime" class="col-sm-3 control-label">开始时间:</label>
+				    <div class="col-sm-5">
+				      <input type=text class="form-control" id="addBgTime" placeholder="请选择开始时间" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm'})">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="addEdTime" class="col-sm-3 control-label">结束时间:</label>
+				    <div class="col-sm-5">
+				      <input type=text class="form-control" id="addEdTime"  placeholder="请选择结束时间" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm'})">
+				    </div>
+				   </div>
+				   <div class="form-group">
+				    <label for="place" class="col-sm-3 control-label">咨询地点:</label>
+				    <div class="col-sm-5">
+				      <input type="text" class="form-control" id="place" placeholder="请输入咨询地点">
+				    </div>
+				   </div>
+				</form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="submitBtn()" id="sub_Btn">确认</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+	</div>
+</body>
+</html>

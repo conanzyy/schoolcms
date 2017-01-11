@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/01-design/!svn/ver/558/code/cms/src/com/cuckoo/cms/teacher/controller
+END
+TeaStudentManagerController.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/01-design/!svn/ver/431/code/cms/src/com/cuckoo/cms/teacher/controller/TeaStudentManagerController.java
+END
+TeaIndexController.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/01-design/!svn/ver/545/code/cms/src/com/cuckoo/cms/teacher/controller/TeaIndexController.java
+END
+TNoticeManagerController.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/01-design/!svn/ver/498/code/cms/src/com/cuckoo/cms/teacher/controller/TNoticeManagerController.java
+END
+GrantManagerController.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/01-design/!svn/ver/119/code/cms/src/com/cuckoo/cms/teacher/controller/GrantManagerController.java
+END
+TeaJobManagerController.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/01-design/!svn/ver/599/code/cms/src/com/cuckoo/cms/teacher/controller/TeaJobManagerController.java
+END
+TPracticeController.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/01-design/!svn/ver/421/code/cms/src/com/cuckoo/cms/teacher/controller/TPracticeController.java
+END
+TeaStuScoreController.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/01-design/!svn/ver/437/code/cms/src/com/cuckoo/cms/teacher/controller/TeaStuScoreController.java
+END
+OrderRecordManagerController.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/01-design/!svn/ver/558/code/cms/src/com/cuckoo/cms/teacher/controller/OrderRecordManagerController.java
+END
+OrderController.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/01-design/!svn/ver/556/code/cms/src/com/cuckoo/cms/teacher/controller/OrderController.java
+END
+TeaLeaveManageController.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/01-design/!svn/ver/477/code/cms/src/com/cuckoo/cms/teacher/controller/TeaLeaveManageController.java
+END
+TeaGrantController.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/01-design/!svn/ver/487/code/cms/src/com/cuckoo/cms/teacher/controller/TeaGrantController.java
+END
+MentalHealthController.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/01-design/!svn/ver/599/code/cms/src/com/cuckoo/cms/teacher/controller/MentalHealthController.java
+END
+OrderScheduleController.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/01-design/!svn/ver/549/code/cms/src/com/cuckoo/cms/teacher/controller/OrderScheduleController.java
+END

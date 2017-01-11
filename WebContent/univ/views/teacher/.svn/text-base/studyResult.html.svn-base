@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学生信息管理系统</title>
+<!-- thirdparty css -->
+<link rel="stylesheet"
+	href="../../thirdparty/bootstrap-3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="../../thirdparty/dataTables-1.10.12/css/jquery.dataTables.min.css">
+<link rel="stylesheet"
+	href="../../thirdparty/dataTables-1.10.12/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet"
+	href="../../thirdparty/icheck-1.0/square/green.css">
+<link rel="stylesheet"
+	href="../../thirdparty/laydate/skins/default/laydate.css">
+<link rel="stylesheet" href="../../thirdparty/laydate/need/laydate.css">
+<!-- personal js -->
+<link rel="stylesheet" href="../../css/index.css">
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../css/data-count.css" />
+<link rel="stylesheet" href="../../css/table.css">
+<!-- thirdparty js -->
+<script src="../../thirdparty/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+<script
+	src="../../thirdparty/dataTables-1.10.12/js/jquery.dataTables.min.js"></script>
+<script
+	src="../../thirdparty/dataTables-1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script src="../../thirdparty/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../../thirdparty/icheck-1.0/icheck.min.js"></script>
+<script src="../../thirdparty/laydate/laydate.dev.js"></script>
+<!-- personal js -->
+<script src="../../js/teacher/scheduleMgr.js"></script>
+<script src="../../js/utils/tablesStyleUtils.js"></script>
+</head>
+<body>
+	<div class="container top">
+		<div class="top-box">
+			<div class="top-box-head">
+				<span>综合测评</span>
+			</div>
+			<div class="top-box-body">
+				<ul class="top-ul">
+					<li>
+						<div>
+							<img src="../../images/xinxibiao.png" alt="" /> <span>综合记录表</span>
+						</div>
+					</li>
+					<li>
+						<form action="">
+							<select name="search-type" id="search-type">
+								<option value="type">类型</option>
+							</select> <select name="search-grade" id="search-grade">
+								<option value="grade">年级</option>
+							</select> <select name="search-class" id="search-class">
+								<option value="class">班级</option>
+							</select> <input type="text" name="search-name" id="search-name"
+								placeholder="姓名" />
+							<button class="btn search-button"></button>
+						</form>
+					</li>
+					<li><a href="#"> <input type="button"
+							class="btn btn-self1" value="导出详情报表" />
+					</a></li>
+				</ul>
+				<table>
+					<tr>
+						<td><input type="checkbox" class="check-all" /></td>
+						<td>序号</td>
+						<td>姓名</td>
+						<td>学号</td>
+						<td>专业</td>
+						<td>所修课程</td>
+						<td>所修课程成绩</td>
+						<td>课程学分</td>
+						<td>课程性质</td>
+						<td>任课老师</td>
+						<td>开课学期</td>
+						<td>操作</td>
+					</tr>
+					<tr>
+						<td><input type="checkbox" class="check-one" /></td>
+						<td>01</td>
+						<td>杨云</td>
+						<td>2016840215</td>
+						<td>信息管理</td>
+						<td>马克思主义</td>
+						<td>88分</td>
+						<td>4学分</td>
+						<td>选修</td>
+						<td>张强</td>
+						<td>第一学期</td>
+						<td><a href="#">查看详情</a> <a href="#">编辑</a> <a href="#">删除</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</div>
+	<!--<script>
+    //待完善
+    $(function(){
+        $('.title-ul .check-all').click(function(){
+            var isChecked = $(this).is(':checked');
+            var isCheckedAll = $(this).parents('ul.title-ul').siblings('ul.content-ul').children('li').children('.check-one');
+            if(isChecked) {
+                isCheckedAll.attr('checked',true);
+//                console.log(12);
+            }else{
+                isCheckedAll.attr('checked',false);
+//                console.log(35);
+            }
+//            console.log(isChecked);
+//            console.log(isCheckedAll);
+
+        });
+    })
+</script>-->
+</body>
+</html>

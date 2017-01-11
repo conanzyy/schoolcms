@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/01-design/!svn/ver/514/code/cms/src/com/cuckoo/cms/admin/pojo/req
+END
+RoleIdReq.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/01-design/!svn/ver/37/code/cms/src/com/cuckoo/cms/admin/pojo/req/RoleIdReq.java
+END
+CounselorDelReq.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/01-design/!svn/ver/581/code/cms/src/com/cuckoo/cms/admin/pojo/req/CounselorDelReq.java
+END
+RoleReq.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/01-design/!svn/ver/37/code/cms/src/com/cuckoo/cms/admin/pojo/req/RoleReq.java
+END
+RoleAddReq.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/01-design/!svn/ver/24/code/cms/src/com/cuckoo/cms/admin/pojo/req/RoleAddReq.java
+END

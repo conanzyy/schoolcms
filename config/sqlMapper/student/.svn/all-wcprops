@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/01-design/!svn/ver/558/code/cms/config/sqlMapper/student
+END
+OrderCounselorMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/01-design/!svn/ver/558/code/cms/config/sqlMapper/student/OrderCounselorMapper.xml
+END
+PracticeMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/01-design/!svn/ver/122/code/cms/config/sqlMapper/student/PracticeMapper.xml
+END
+StudentMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/01-design/!svn/ver/233/code/cms/config/sqlMapper/student/StudentMapper.xml
+END
+StudentLeaveMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/01-design/!svn/ver/546/code/cms/config/sqlMapper/student/StudentLeaveMapper.xml
+END
+MyOrderMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/01-design/!svn/ver/558/code/cms/config/sqlMapper/student/MyOrderMapper.xml
+END
+NoticeManagerMapper.xml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/01-design/!svn/ver/591/code/cms/config/sqlMapper/student/NoticeManagerMapper.xml
+END

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学生信息管理系统</title>
+<!-- thirdparty css -->
+<link rel="stylesheet" href="../../thirdparty/bootstrap-3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/jsTree-3.3.3/dist/themes/default/style.min.css">
+<!-- personal js -->
+<link rel="stylesheet" href="../../css/index.css">
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../css/table.css">
+<!-- thirdparty js -->
+<script src="../../thirdparty/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script src="../../thirdparty/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../../thirdparty/jsTree-3.3.3/dist/jstree.min.js"></script>
+<!-- personal js -->
+<script src="../../js/student/layer.js"></script>
+</head>
+<body>
+	<div class="container top">
+        <div class="top-box">
+            <div class="top-box-head">
+                <span>实习信息</span>
+                <div class="btn btn-default fr" onclick="window.history.back()">返回</div>
+            </div>
+            <div class="top-box-body">
+            <form id="studentform">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th colspan="8">实习信息资料</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <label for="stuName">姓名</label>
+                            </td>
+                            <td>
+                                <input type="text" id="stuName" name="stuName" readonly/>
+                            </td>
+                            <td>
+                                <label for="stuNum">学号</label>
+                            </td>
+                            <td>
+                               	<input type="text" id="stuNum" name="stuNum" readonly/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="className">专业</label>
+                            </td>
+                            <td>
+                                <input type="text" id="className" name="className" readonly/>
+                            </td>
+                            <td>
+                                <label for="proName">班级</label>
+                            </td>
+                            <td>
+                               	<input type="text" id="proName" name="proName" readonly/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="emType">就业类别</label>
+                            </td>
+                            <td>
+                                <input type="text" id="emType" name="emType" readonly/>
+                            </td>
+                            <td>
+                                <label for="workCompany">工作(升学)单位名称</label>
+                            </td>
+                            <td>
+                               	<input type="text" id="workCompany" name="workCompany" readonly/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="companyNature">单位性质</label>
+                            </td>
+                            <td>
+                                <input type="text" id="companyNature" name="companyNature" readonly/>
+                            </td>
+                            <td>
+                                <label for="workAddress">单位地址</label>
+                            </td>
+                            <td>
+                               	<input type="text" id="workAddress" name="workAddress" readonly/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="workPhone">单位电话</label>
+                            </td>
+                            <td>
+                                <input type="text" id="workPhone" name="workPhone" readonly/>
+                            </td>
+                            <td>
+                                
+                            </td>
+                            <td>
+                               
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+ 	<script>
+ 	$(document).ready(function() {
+ 		var id = window.location.href.split('=')[1];
+ 		loadStudentInfo(id);
+ 		
+ 	} );
+
+ 	function loadStudentInfo(id){
+ 	    $('table').prepend('<form id="form"><input type="hidden" name="practiceId" value="'+id+'"></form>');
+ 	    $.ajax({
+ 	        url:"/cms/getTPracticeInfo",
+ 	        type:"post",
+ 	        data: $('#form').serialize(),
+ 	        success:function(data){
+ 	        	console.log(data)
+ 	            if(data.rtnCode=="0"){
+ 	                for(var i in data.data){
+ 	                    $('input[name='+i+']').val(data.data[i]);
+ 	                }
+ 	            }else{
+ 	                    layer.msg('未获取到学生信息');
+ 	                }
+ 	            }
+ 	    });
+ 	}
+ 	</script>
+</body>
+</html>

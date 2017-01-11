@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cuckoo.cms.teacher.dao.IMentalHealthDao">
+	<resultMap id="mentalhealthResultMap" type="com.cuckoo.cms.teacher.pojo.MentalHealth">
+		<id column="healthId" property="healthId" jdbcType="VARCHAR" />
+		<result column="stuName" property="stuName" jdbcType="VARCHAR" />
+		<result column="stuNum" property="stuNum" jdbcType="VARCHAR" />
+		<result column="proName" property="proName" jdbcType="VARCHAR" />
+		<result column="className" property="className" jdbcType="VARCHAR" />
+		<result column="userId" property="userId" jdbcType="VARCHAR" />
+		<result column="result" property="result" jdbcType="VARCHAR" />
+		<result column="createTime" property="createTime" jdbcType="VARCHAR" />
+		<result column="way" property="way" jdbcType="VARCHAR" />
+		<result column="record" property="record" jdbcType="VARCHAR" />
+		<result column="step" property="step" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="VARCHAR" />
+	</resultMap>
+	<select id="getMentalHealthList" parameterType="string" resultMap="mentalhealthResultMap">
+<![CDATA[
+select ts.stuName,ts.stuNum,tpf.proName,tc.className,tmh.healthId,tmh.userId,
+tmh.result,tmh.createTime,tmh.way,tmh.record,tmh.step,tmh.status from t_mental_health tmh
+ join t_user tu on tmh.userId = tu.userId
+ left join t_student ts on ts.userId = tmh.userId and ts.status='0'
+ left join t_class tc on tc.classId =ts.classId 
+ left join t_profession tpf on tpf.proId = ts.proId  
+ left join t_master_class tmc on tmc.classId = tc.classId
+  where  tu.status = '0' and tu.tenantId =#{tenantId} and tmh.status='0'
+order by tmh.healthId ASC
+ ]]>
+	</select>
+	
+	
+<select id="getMentalHealthInfo" resultMap="mentalhealthResultMap">
+	<![CDATA[
+	select ts.stuName,ts.stuNum,tpf.proName,tc.className,tmh.healthId,tmh.userId,
+tmh.result,tmh.createTime,tmh.way,tmh.record,tmh.step,tmh.status from t_mental_health tmh
+ join t_user tu on tmh.userId = tu.userId
+ left join t_student ts on ts.userId = tmh.userId and ts.status='0'
+ left join t_class tc on tc.classId =ts.classId 
+ left join t_profession tpf on tpf.proId = ts.proId  
+ left join t_master_class tmc on tmc.classId = tc.classId
+  where  tu.status = '0' and tmh.healthId = #{healthId}
+
+	]]>
+	</select>
+	
+	
+	<update id="updateMentalHealth">
+<![CDATA[
+    update t_mental_health set result=#{1},way=#{2},record=#{3},step=#{4}
+			 where healthId=#{0}  and status='0'
+     ]]>
+	</update>
+	
+
+<update id="deleteMentalHealth" parameterType="String">
+	<![CDATA[
+	update t_mental_health set status='1' where  healthId=#{0}  and status='0'
+	 ]]>
+	</update>
+
+<insert id="batchInsert" >
+	INSERT INTO 
+		t_mental_health(userId, result, createTime, way, record, step)
+	VALUES
+		<foreach collection="list" item="mantalHealth" separator="," >
+				 	(#{mantalHealth.userId}, #{mantalHealth.result}, #{mantalHealth.createTime}, #{mantalHealth.way}, #{mantalHealth.record}, #{mantalHealth.step})
+		</foreach>
+</insert>
+
+</mapper> 

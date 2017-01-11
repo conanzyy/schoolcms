@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学生信息管理系统</title>
+<!-- thirdparty css -->
+<link rel="stylesheet" href="../../thirdparty/bootstrap-3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/jsTree-3.3.3/dist/themes/default/style.min.css">
+<!-- personal js -->
+<link rel="stylesheet" href="../../css/index.css">
+<link rel="stylesheet" href="../../css/practice.css">
+<link rel="stylesheet" href="../../css/bootstrapValidator.min.css">
+<!-- thirdparty js -->
+<script src="../../thirdparty/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script src="../../thirdparty/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../../thirdparty/jsTree-3.3.3/dist/jstree.min.js"></script>
+<!-- personal js -->
+<script src="../../js/student/practice.js"></script>
+<script src="../../js/student/bootstrapValidator.min.js"></script>
+<script src="../../js/utils/tablesStyleUtils.js"></script>
+</head>
+<body>
+	<div class="container top">
+    <div class="top-box">
+        <div class="top-box-head">
+            <span>实习信息审核</span>
+        </div>
+        <div class="top-box-body">
+            <ul class="top-ul">
+                <li>
+                    <div>
+                        <img src="../../images/xinxibiao.png" alt=""/>
+                        <span>实习信息表</span>
+                    </div>
+                </li>
+                <li>
+                    <a data-toggle="modal" href="#myModal" class="btn btn-self1" data-target="#myModal">添加实习信息</a>
+                </li>
+            </ul>
+            <table id="practiceTable" class="display">
+		    	<thead>
+            		<tr>
+            			<th style="width:5%;"><input type='checkbox' id="checkAll"></th>
+		                <th style="width:8%">序号</th>
+		                <th style="width:10%">就业类别</th>
+		                <th>工作(升学)单位名称</th>
+		                <th>单位性质</th>
+						<th></th>
+		                <th style="width:11%">单位联系电话</th>
+		                <th>部门主管姓名</th>
+		                <th>主管电话</th>
+		                <th>单位地址</th>
+		                <th>实习诚信记录</th>
+		                <th style="width:18%">操作</th>
+            		</tr>
+            	</thead>
+			</table> 
+        </div>
+    </div>
+    <form role="form" id="form">
+    <input type="hidden" name="practiceId">
+  	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	        <h4 class="modal-title" id="myModalLabel">实习信息登记表</h4>
+	      </div>
+	      <div class="modal-body">
+	        <div class="form-group">
+			  <label for="emType" class="col-sm-4 control-label">就业类别</label>
+			    <div class="col-sm-5">
+			      <input type="text" class="form-control" id="emType" name="emType" required="required">
+			    </div>
+			</div>
+	       	<div class="form-group">
+			  <label for="workCompany" class="col-sm-4 control-label">工作(升学)单位名称</label>
+			    <div class="col-sm-5">
+			      <input type="text" class="form-control" id="workCompany" name="workCompany" required="required">
+			    </div>
+			</div>
+			<div class="form-group">
+			  <label for="companyNature" class="col-sm-4 control-label">单位性质</label>
+			    <div class="col-sm-5">
+			      <input type="text" class="form-control" id="companyNature" name="companyNature" required="required">
+			    </div>
+			</div>
+			<div class="form-group">
+			  <label for="workPhone" class="col-sm-4 control-label">单位联系电话</label>
+			    <div class="col-sm-5">
+			      <input type="text" class="form-control" id="workPhone" name="workPhone" required="required">
+			    </div>
+			</div>
+			<div class="form-group">
+			  <label for="superName" class="col-sm-4 control-label">部门主管姓名</label>
+			    <div class="col-sm-5">
+			      <input type="text" class="form-control" id="superName" name="superName" required="required">
+			    </div>
+			</div>
+			<div class="form-group">
+			  <label for="superPhone" class="col-sm-4 control-label">主管电话</label>
+			    <div class="col-sm-5">
+			      <input type="text" class="form-control" id="superPhone" name="superPhone" required="required">
+			    </div>
+			</div>
+			<div class="form-group">
+			  <label for="workAddress" class="col-sm-4 control-label">单位地址</label>
+			    <div class="col-sm-5">
+			      <input type="text" class="form-control" id="workAddress" name="workAddress" required="required">
+			    </div>
+			</div>
+			<div class="form-group">
+			  <label for="practiceRecord" class="col-sm-4 control-label">实习诚信记录</label>
+			    <div class="col-sm-5">
+			      <input type="text" class="form-control" id="practiceRecord" name="practiceRecord" required="required">
+			    </div>
+			</div>
+	      </div>
+	      <div class="modal-footer">
+	      	<div class="form-group">
+                <button type="submit" name="submit" class="btn btn-default button-submit">提交</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+	        
+	      </div>
+	    </div>
+	  </div>
+	</div> 
+	</form>
+</div>
+</body>
+</html>

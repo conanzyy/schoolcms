@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.cuckoo.cms.teacher.dao.TeaLeaveDao">
+    <resultMap id="LeaveResultMap" type="com.cuckoo.cms.teacher.pojo.TeaLeave">
+    	<id column="leaveId" property="leaveId" jdbcType="VARCHAR" ></id>
+		<result column="userId" property="userId" jdbcType="VARCHAR" />
+		<result column="applyTime" property="applyTime" jdbcType="VARCHAR" />
+		<result column="cause" property="cause" jdbcType="VARCHAR" />
+		<result column="leaveDays" property="leaveDays" jdbcType="VARCHAR" />
+		<result column="leaveTime" property="leaveTime" jdbcType="VARCHAR" />
+		<result column="comeTime" property="comeTime" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="VARCHAR" />
+		<result column="type" property="type" jdbcType="VARCHAR" />
+		<result column="courseId" property="courseId" jdbcType="VARCHAR" />
+    </resultMap>
+    
+    <resultMap id="TeaIndexLeaveResultMap" type="com.cuckoo.cms.teacher.pojo.TeaIndexLeave">
+    	<id column="leaveId" property="leaveId" jdbcType="VARCHAR" ></id>
+		<result column="userId" property="userId" jdbcType="VARCHAR" />
+		<result column="applyTime" property="applyTime" jdbcType="VARCHAR" />
+		<result column="cause" property="cause" jdbcType="VARCHAR" />
+		<result column="leaveDays" property="leaveDays" jdbcType="VARCHAR" />
+		<result column="leaveTime" property="leaveTime" jdbcType="VARCHAR" />
+		<result column="comeTime" property="comeTime" jdbcType="VARCHAR" />
+		<result column="status" property="status" jdbcType="VARCHAR" />
+		<result column="type" property="type" jdbcType="VARCHAR" />
+		<result column="courseId" property="courseId" jdbcType="VARCHAR" />
+    </resultMap>
+    
+    <!-- 获取学生请假信息列表 -->
+    <select id="getTeaLeaveList" parameterType="string" resultMap="LeaveResultMap">
+    	<![CDATA[
+    		select tl.leaveId,tl.userId,ts.stuNum,ts.stuName,tc.className,tl.applyTime,tl.cause,tl.leaveDays,tl.leaveTime,tl.comeTime,tl.status,tl.type,tl.courseId 
+    			from t_leave tl 
+    			left join t_student ts 
+    				on ts.userId=tl.userId AND ts.status = '0'
+    			left join t_class tc 
+    				on tc.classId = ts.classId 
+    			left join t_master_class tms 
+    				on tms.classId = tc.classId
+    			left join t_teacher tt 
+    				on tt.userId = tms.userId AND tt.userId=#{0} AND tt.status = '0'
+    			left join t_user tu 
+    				on tu.userId = tt.userId AND tu.tenantId=#{1} AND tu.status = '0'
+    				
+    				where tl.status !='3' ORDER BY tl.applyTime DESC
+    				
+    				
+    					
+    	]]>
+    </select>
+    
+    <!-- 获取学生请假信息详情 -->
+    <select id="getTeaLeave" resultMap="LeaveResultMap">
+    	<![CDATA[
+    		select tl.leaveId,tl.userId,ts.stuNum,ts.stuName,tc.className,tl.applyTime,tl.cause,tl.leaveDays,tl.leaveTime,tl.comeTime,tl.status,tl.type,tl.courseId 
+    			from t_leave tl 
+    			left join t_student ts 
+    				on ts.userId=tl.userId AND ts.status = '0'
+    			left join t_class tc 
+    				on tc.classId = ts.classId 
+    			left join t_master_class tms 
+    				on tms.classId = tc.classId
+    			left join t_teacher tt 
+    				on tt.userId = tms.userId AND tt.status = '0'
+    			left join t_user tu 
+    				on tu.userId = tt.userId AND tu.status = '0'
+    				where tl.leaveId=#{leaveId} ORDER BY tl.applyTime DESC
+    				
+    	]]>
+    </select>
+    
+    <!-- 审核请假信息 -->
+    <update id="updateTeaLeaveInfoYes" parameterType="string">
+    	<![CDATA[
+    		update t_leave set status='1' 
+    			where leaveId=#{leaveId}
+    	]]>
+    </update>
+    
+    <update id="updateTeaLeaveInfoNo">
+    		update t_leave set status='2' 
+    			where leaveId=#{leaveId}
+    </update>
+    
+    
+    <update id="deleteTeaLeave" parameterType="String">
+	<![CDATA[
+	update t_leave set status='4' where  leaveId=#{0}  and status != '4'
+	 ]]>
+	</update>
+	
+	<!-- 教师端首页SQL -->
+	<!-- 获取前八条未处理请假消息 -->
+	<select id="getTeaLeaveUntreatedList" parameterType="string" resultMap="TeaIndexLeaveResultMap">
+			<![CDATA[
+				select b.* from(select tl.leaveId,tl.userId,ts.stuNum,ts.stuName,tl.applyTime,tl.cause,tl.leaveDays,tl.leaveTime,tl.comeTime,
+						tl.status,tl.type,tl.courseId 
+					from t_leave tl  
+						left join t_student ts on ts.userId = tl.userId AND ts.status='0' 
+						left join t_class tc on tc.classId = ts.classId 
+						left join t_master_class tms on tms.classId = tc.classId 
+						left join t_teacher tt on tt.userId = tms.userId AND tt.userId=#{0} AND tt.status='0' 
+						left join t_user tu on tu.userId = tt.userId AND tu.tenantId=#{1} AND tu.status='0'
+						where tl.status='0') b limit 0,8
+			]]>
+		</select>
+	
+    
+    </mapper>

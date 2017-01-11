@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学生信息管理系统</title>
+<!-- thirdparty css -->
+<link rel="stylesheet" href="../../thirdparty/bootstrap-3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/jsTree-3.3.3/dist/themes/default/style.min.css">
+<!-- personal js -->
+<link rel="stylesheet" href="../../css/index.css">
+<link rel="stylesheet" href="../../css/consultBack.css">
+<!-- thirdparty js -->
+<script src="../../thirdparty/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script src="../../thirdparty/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<script src="../../thirdparty/jsTree-3.3.3/dist/jstree.min.js"></script>
+<!-- personal js -->
+<script src="../../js/student/consultBack.js"></script>
+</head>
+<body>
+	<div class="container top">
+        <div class="top-box">
+            <div class="top-box-head">
+                <span>个人信息</span>
+            </div>
+            <div class="top-box-body">
+                <form role="form" action="">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th colspan="8">咨询反馈表</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>
+                                <label for="name">姓名</label>
+                            </td>
+                            <td>
+                                <input type="text" id="name" name="name" required/>
+                            </td>
+                            <td>
+                                <label for="number">学号</label>
+                            </td>
+                            <td>
+                                <input type="number" id="number" name="number" required/>
+                            </td>
+                            <td>
+                                <label for="class">班级</label>
+                            </td>
+                            <td>
+                                <input type="text" id="class" name="number" required/>
+                            </td>
+                            <td>
+                                <label for="con-type">咨询类型</label>
+                            </td>
+                            <td>
+                                <input type="text" id="con-type" name="con-type"/>
+                            </td>
+                        </tr>
+                        <tr class="tr-height">
+                            <td>
+                                <label for="con-satisfaction">咨询满意度</label>
+                            </td>
+                            <td colspan="7" class="satisfaction">
+                                <div id="con-satisfaction">
+                                    <input type="radio" name="con-satisfaction" value="1" checked/>&nbsp;非常满意
+                                    <input type="radio" name="con-satisfaction" value="2"/>&nbsp;比较满意
+                                    <input type="radio" name="con-satisfaction" value="3"/>&nbsp;一般
+                                    <input type="radio" name="con-satisfaction" value="4"/>&nbsp;不太满意
+                                    <input type="radio" name="con-satisfaction" value="5"/>&nbsp;非常不满意
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="tr-height">
+                            <td>
+                                <label for="con-feel">咨询体会</label>
+                            </td>
+                            <td colspan="7">
+                                <div id="con-feel">
+                                    <input type="text" name="con-feel" placeholder="请简单描述一下咨询以后的心得和体会？"/>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="tr-height">
+                            <td>
+                                <label for="con-evaluation">对咨询老师的评价</label>
+                            </td>
+                            <td colspan="7">
+                                <div id="con-evaluation">
+                                    <input type="text" name="con-evaluation" placeholder="请对咨询老师的工作进行评价？"/>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="tr-height">
+                            <td>
+                                <label for="con-evaluation">工作改进</label>
+                            </td>
+                            <td colspan="7">
+                                <div id="con-evaluation">
+                                    <input type="text" name="con-evaluation" placeholder="你觉得咨询工作还需要做出哪些改进？"/>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <button class="btn" type="submit">提交反馈</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

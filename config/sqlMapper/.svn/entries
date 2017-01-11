@@ -1,0 +1,40 @@
+10
+
+dir
+55
+http://code.taobao.org/svn/01-design/code/cms/config/sqlMapper
+http://code.taobao.org/svn/01-design
+
+
+
+2016-12-19T11:05:12.634428Z
+53
+chenxuefeng
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+2799667c-4b2c-4be1-a326-e3a5e1da2ffa
+
+admin
+dir
+
+common
+dir
+
+student
+dir
+
+teacher
+dir
+

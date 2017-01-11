@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学生信息管理系统</title>
+<!-- thirdparty css -->
+<link rel="stylesheet" href="../../thirdparty/bootstrap-3.3.7/css/bootstrap.min.css">
+<!-- personal css -->
+<link rel="stylesheet" href="../../css/index.css">
+<link rel="stylesheet" href="../../css/consult.css">
+<!-- thirdparty js -->
+<script src="../../thirdparty/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="../../thirdparty/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<!-- personal js -->
+<script src="../../js/student/consult.js"></script>
+<script src="../../js/utils/tablesStyleUtils.js"></script>
+</head>
+<body>
+<!-- <div class="container top">
+    <div class="top-box">
+        <div class="top-box-head">
+            <span>预约咨询</span>
+        </div>
+        <div class="top-box-body">
+            <div class="consultive-box-1">
+                <img src="../../images/yuyue.png" alt=""/>
+                <div class="consultive-box-content">
+                    <p class="content-label">姓名 : <span>王强</span></p>
+                    <p class="content-label">工号 : <span>014</span></p>
+                    <p class="content-label">性别 : <span>男</span></p>
+                    <p class="content-label">研究方向 : <span>心理学</span></p>
+                    <p class="content-label">研究领域 : <span>学生心理</span></p>
+                    <button class="btn btn-self3">预约咨询</button>
+                </div>
+            </div>
+            <div class="consultive-box-2">
+                <img src="../../images/yuyue.png" alt=""/>
+                <div class="consultive-box-content">
+                    <p class="content-label">姓名 : <span>王强</span></p>
+                    <p class="content-label">工号 : <span>014</span></p>
+                    <p class="content-label">性别 : <span>男</span></p>
+                    <p class="content-label">研究方向 : <span>心理学</span></p>
+                    <p class="content-label">研究领域 : <span>学生心理</span></p>
+                    <button class="btn btn-self3">预约咨询</button>
+                </div>
+            </div>
+            <div class="consultive-box-3">
+                <img src="../../images/yuyue.png" alt=""/>
+                <div class="consultive-box-content">
+                    <p class="content-label">姓名 : <span>王强</span></p>
+                    <p class="content-label">工号 : <span>014</span></p>
+                    <p class="content-label">性别 : <span>男</span></p>
+                    <p class="content-label">研究方向 : <span>心理学</span></p>
+                    <p class="content-label">研究领域 : <span>学生心理</span></p>
+                    <button class="btn btn-self3">预约咨询</button>
+                </div>
+            </div>
+            <div class="consultive-box-4">
+                <img src="../../images/yuyue.png" alt=""/>
+                <div class="consultive-box-content">
+                    <p class="content-label">姓名 : <span>王强</span></p>
+                    <p class="content-label">工号 : <span>014</span></p>
+                    <p class="content-label">性别 : <span>男</span></p>
+                    <p class="content-label">研究方向 : <span>心理学</span></p>
+                    <p class="content-label">研究领域 : <span>学生心理</span></p>
+                    <button class="btn btn-self3">预约咨询</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="container-fluid">
+	<div class="row-fluid col-md-12 tableTop">
+		<p>预约咨询</p>
+		<hr>
+		<div class="selorContainer">
+			<div class="selorList">
+				<div class="selorContent">
+					<img class="img-responsive center-block" src="../../images/selor.jpg"/>
+	                <div class="consultive-box-content">
+	                    <p class="content-label">姓名 : <span>王强</span></p>
+	                    <p class="content-label">工号 : <span>014</span></p>
+	                    <p class="content-label">性别 : <span>男</span></p>
+	                    <p class="content-label">研究方向 : <span>心理学</span></p>
+	                    <p class="content-label">研究领域 : <span>学生心理</span></p>
+	                    <button class="btn btn-self3">预约咨询</button>
+	                </div>
+				</div>
+				<div class="selorContent">
+					<img class="img-responsive center-block" src="../../images/selor.jpg"/>
+	                <div class="consultive-box-content">
+	                    <p class="content-label">姓名 : <span>王强</span></p>
+	                    <p class="content-label">工号 : <span>014</span></p>
+	                    <p class="content-label">性别 : <span>男</span></p>
+	                    <p class="content-label">研究方向 : <span>心理学</span></p>
+	                    <p class="content-label">研究领域 : <span>学生心理</span></p>
+	                    <button class="btn btn-self3">预约咨询</button>
+	                </div>
+				</div>
+				<div class="selorContent">
+					<img class="img-responsive center-block" src="../../images/selor.jpg"/>
+	                <div class="consultive-box-content">
+	                    <p class="content-label">姓名 : <span>王强</span></p>
+	                    <p class="content-label">工号 : <span>014</span></p>
+	                    <p class="content-label">性别 : <span>男</span></p>
+	                    <p class="content-label">研究方向 : <span>心理学</span></p>
+	                    <p class="content-label">研究领域 : <span>学生心理</span></p>
+	                    <button class="btn btn-self3">预约咨询</button>
+	                </div>
+				</div>
+				<div class="selorContent">
+					<img class="img-responsive center-block" src="../../images/selor.jpg"/>
+	                <div class="consultive-box-content">
+	                    <p class="content-label">姓名 : <span>王强</span></p>
+	                    <p class="content-label">工号 : <span>014</span></p>
+	                    <p class="content-label">性别 : <span>男</span></p>
+	                    <p class="content-label">研究方向 : <span>心理学</span></p>
+	                    <p class="content-label">研究领域 : <span>学生心理</span></p>
+	                    <button class="btn btn-self3">预约咨询</button>
+	                </div>
+				</div>
+				<div class="selorContent">
+					<img class="img-responsive center-block" src="../../images/selor.jpg"/>
+	                <div class="consultive-box-content">
+	                    <p class="content-label">姓名 : <span>王强</span></p>
+	                    <p class="content-label">工号 : <span>014</span></p>
+	                    <p class="content-label">性别 : <span>男</span></p>
+	                    <p class="content-label">研究方向 : <span>心理学</span></p>
+	                    <p class="content-label">研究领域 : <span>学生心理</span></p>
+	                    <button class="btn btn-self3">预约咨询</button>
+	                </div>
+				</div>
+				<div class="selorContent">
+					<img class="img-responsive center-block" src="../../images/selor.jpg"/>
+	                <div class="consultive-box-content">
+	                    <p class="content-label">姓名 : <span>王强</span></p>
+	                    <p class="content-label">工号 : <span>014</span></p>
+	                    <p class="content-label">性别 : <span>男</span></p>
+	                    <p class="content-label">研究方向 : <span>心理学</span></p>
+	                    <p class="content-label">研究领域 : <span>学生心理</span></p>
+	                    <button class="btn btn-self3">预约咨询</button>
+	                </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

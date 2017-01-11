@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/01-design/!svn/ver/556/code/cms/src/com/cuckoo/cms/teacher/pojo/req
+END
+TeaStuScoreAddReq.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/01-design/!svn/ver/435/code/cms/src/com/cuckoo/cms/teacher/pojo/req/TeaStuScoreAddReq.java
+END
+TeaJobAddReq.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/01-design/!svn/ver/395/code/cms/src/com/cuckoo/cms/teacher/pojo/req/TeaJobAddReq.java
+END
+TNoticeAddReq.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/01-design/!svn/ver/179/code/cms/src/com/cuckoo/cms/teacher/pojo/req/TNoticeAddReq.java
+END
+TeaStudentEditReq.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/01-design/!svn/ver/303/code/cms/src/com/cuckoo/cms/teacher/pojo/req/TeaStudentEditReq.java
+END
+TeaGrantAddReq.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/01-design/!svn/ver/490/code/cms/src/com/cuckoo/cms/teacher/pojo/req/TeaGrantAddReq.java
+END
+OrderDeleteReq.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/01-design/!svn/ver/556/code/cms/src/com/cuckoo/cms/teacher/pojo/req/OrderDeleteReq.java
+END
+TeaLeaveAddReq.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/01-design/!svn/ver/315/code/cms/src/com/cuckoo/cms/teacher/pojo/req/TeaLeaveAddReq.java
+END
+OrderOneDoneReq.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/01-design/!svn/ver/551/code/cms/src/com/cuckoo/cms/teacher/pojo/req/OrderOneDoneReq.java
+END
+OrderRecordAddReq.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/01-design/!svn/ver/445/code/cms/src/com/cuckoo/cms/teacher/pojo/req/OrderRecordAddReq.java
+END
+TeaLeaveIdReq.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/01-design/!svn/ver/316/code/cms/src/com/cuckoo/cms/teacher/pojo/req/TeaLeaveIdReq.java
+END
+MentalHealthReq.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/01-design/!svn/ver/342/code/cms/src/com/cuckoo/cms/teacher/pojo/req/MentalHealthReq.java
+END
+OrderScheduleReq.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/01-design/!svn/ver/549/code/cms/src/com/cuckoo/cms/teacher/pojo/req/OrderScheduleReq.java
+END
+TNoticeIdReq.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/01-design/!svn/ver/144/code/cms/src/com/cuckoo/cms/teacher/pojo/req/TNoticeIdReq.java
+END
+TeaGrantIdReq.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/01-design/!svn/ver/491/code/cms/src/com/cuckoo/cms/teacher/pojo/req/TeaGrantIdReq.java
+END
+TPracticeIdReq.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/01-design/!svn/ver/218/code/cms/src/com/cuckoo/cms/teacher/pojo/req/TPracticeIdReq.java
+END

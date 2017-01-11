@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学生信息管理系统</title>
+<!-- thirdparty css -->
+<link rel="stylesheet" href="../../thirdparty/bootstrap-3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="../../thirdparty/dataTables-1.10.12/css/dataTables.bootstrap.min.css">
+<!-- personal css -->
+<link rel="stylesheet" href="../../css/index.css">
+<link rel="stylesheet" href="../../css/activityMg.css">
+<link rel="stylesheet" href="../../css/table.css">
+<!-- thirdparty js -->
+<script src="../../thirdparty/jquery-3.1.1/jquery-3.1.1.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="../../thirdparty/dataTables-1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script src="../../thirdparty/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+<!-- personal js -->
+<script src="../../js/utils/tablesStyleUtils.js"></script>
+<!-- <script src="../../js/student/activityMgr.js"></script> -->
+</head>
+<body>
+<div class="container top">
+    <div class="top-box">
+        <div class="top-box-head">
+            <span>活动管理</span>
+        </div>
+        <div class="top-box-body">
+            <ul class="top-ul">
+                <li>
+                    <div>
+                        <img src="../../images/xinxibiao.png" alt=""/>
+                        <span>活动信息表</span>
+                    </div>
+                </li>
+            </ul>
+            <table id="activityMgTable" class="display">
+		    	<thead>
+            		<tr>
+            			<th style="width:15px;"><input type='checkbox' id="checkAll"></th>
+		                <th style="width:30px">序号</th>
+		                <th>活动名称</th>
+		                <th>活动类型</th>
+		                <th>参与对象</th>
+						<th>参与条件</th>
+		                <th>活动时间</th>
+		                <th>活动地点</th>
+		                <th>活动人数</th>
+		                <th>报名截止时间</th>
+		                <th style="width:100px">操作</th>
+            		</tr>
+            		<tr>
+		                <td><input type="checkbox" class="check-one"/></td>
+		                <td>01</td>
+		                <td>义务植树</td>
+		                <td>志愿服务</td>
+		                <td>大一新生</td>
+		                <td>上午没有课</td>
+		                <td>2016-11-11</td>
+		                <td>校园</td>
+		                <td>100</td>
+		                <td>2016-11-1</td>
+		                <td>
+		                    <a href="activity-detail.html">查看详情</a>
+		                    <a href="#" class="bm">在线报名</a>
+		                </td>
+            		</tr>
+            	</thead>
+			</table>
+        </div>
+        <div class="top-box-body">
+            <ul class="top-ul">
+                <li>
+                    <div>
+                        <img src="../../images/xinxibiao.png" alt=""/>
+                        <span>已参加活动信息表</span>
+                    </div>
+                </li>
+            </ul>
+            <table id="joinedActivityTable" class="display">
+		    	<thead>
+            		<tr>
+            			<th style="width:15px;"><input type='checkbox' id="checkAll"></th>
+		                <th style="width:30px">序号</th>
+		                <th>活动名称</th>
+		                <th>活动类型</th>
+		                <th>活动时间</th>
+		                <th>活动地点</th>
+		                <th>活动人数</th>
+		                <th>报名积分</th>
+		                <th style="width:100px">操作</th>
+            		</tr>
+            		<tr>
+            			<td><input type="checkbox" class="check-one"/></td>
+		                <td>01</td>
+		                <td>义务植树</td>
+		                <td>志愿服务</td>
+		                <td>2016-11-11</td>
+		                <td>校园</td>
+		                <td>100</td>
+		                <td>2</td>
+		                <td>
+		                    <a href="activity-detail.html">查看详情</a>
+		                </td>
+            		</tr>
+            	</thead>
+			</table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

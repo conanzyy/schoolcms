@@ -1,0 +1,71 @@
+10
+
+dir
+55
+http://code.taobao.org/svn/01-design/code/cms/config
+http://code.taobao.org/svn/01-design
+
+
+
+2016-12-19T11:05:12.634428Z
+53
+chenxuefeng
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+2799667c-4b2c-4be1-a326-e3a5e1da2ffa
+
+log4j2.xml
+file
+
+
+
+
+2016-12-20T05:05:35.180000Z
+a8c212a3656edf9e756c5e899f26fef9
+2016-12-02T13:45:17.471481Z
+4
+twx270129
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1786
+
+prop
+dir
+
+spring
+dir
+
+sqlMapper
+dir
+

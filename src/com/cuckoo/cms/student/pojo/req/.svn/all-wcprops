@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/01-design/!svn/ver/558/code/cms/src/com/cuckoo/cms/student/pojo/req
+END
+OrderCounselorScheduleReq.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/01-design/!svn/ver/558/code/cms/src/com/cuckoo/cms/student/pojo/req/OrderCounselorScheduleReq.java
+END
+LeaveIdReq.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/01-design/!svn/ver/159/code/cms/src/com/cuckoo/cms/student/pojo/req/LeaveIdReq.java
+END
+NoticeIdReq.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/01-design/!svn/ver/52/code/cms/src/com/cuckoo/cms/student/pojo/req/NoticeIdReq.java
+END
+StudentEditReq.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/01-design/!svn/ver/300/code/cms/src/com/cuckoo/cms/student/pojo/req/StudentEditReq.java
+END
+PracticeAddReq.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/01-design/!svn/ver/148/code/cms/src/com/cuckoo/cms/student/pojo/req/PracticeAddReq.java
+END
+LeaveAddReq.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/01-design/!svn/ver/355/code/cms/src/com/cuckoo/cms/student/pojo/req/LeaveAddReq.java
+END
+OrderCounselorReq.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/01-design/!svn/ver/558/code/cms/src/com/cuckoo/cms/student/pojo/req/OrderCounselorReq.java
+END
+PracticeReq.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/01-design/!svn/ver/150/code/cms/src/com/cuckoo/cms/student/pojo/req/PracticeReq.java
+END
